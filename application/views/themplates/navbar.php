@@ -15,53 +15,9 @@
          <!-- Topbar Start -->
          <div class="navbar-custom">
              <ul class="list-unstyled topbar-menu float-end mb-0">
-                 <li class="dropdown notification-list d-lg-none">
-                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                         aria-haspopup="false" aria-expanded="false">
-                         <i class="dripicons-search noti-icon"></i>
-                     </a>
-
-                 </li>
-                 <li class="dropdown notification-list topbar-dropdown">
-                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                         aria-haspopup="false" aria-expanded="false">
-                         <img src="<?= base_url() ?>assets/backend/images/flags/us.jpg" alt="user-image"
-                             class="me-0 me-sm-1" height="12">
-                         <span class="align-middle d-none d-sm-inline-block">English</span> <i
-                             class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
-
-                         <!-- item-->
-                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                             <img src="<?= base_url() ?>assets/backend/images/flags/germany.jpg" alt="user-image"
-                                 class="me-1" height="12"> <span class="align-middle">German</span>
-                         </a>
-
-                         <!-- item-->
-                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                             <img src="<?= base_url() ?>assets/backend/images/flags/italy.jpg" alt="user-image"
-                                 class="me-1" height="12"> <span class="align-middle">Italian</span>
-                         </a>
-
-                         <!-- item-->
-                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                             <img src="<?= base_url() ?>assets/backend/images/flags/spain.jpg" alt="user-image"
-                                 class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                         </a>
-
-                         <!-- item-->
-                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                             <img src="<?= base_url() ?>assets/backend/images/flags/russia.jpg" alt="user-image"
-                                 class="me-1" height="12"> <span class="align-middle">Russian</span>
-                         </a>
-
-                     </div>
-                 </li>
 
                  <li class="dropdown notification-list">
-                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                         aria-haspopup="false" aria-expanded="false">
+                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                          <i class="dripicons-bell noti-icon"></i>
                          <span class="noti-icon-badge"></span>
                      </a>
@@ -102,8 +58,7 @@
                              <!-- item-->
                              <a href="javascript:void(0);" class="dropdown-item notify-item">
                                  <div class="notify-icon">
-                                     <img src="<?= base_url() ?>assets/backend/images/users/avatar-2.jpg"
-                                         class="img-fluid rounded-circle" alt="">
+                                     <img src="<?= base_url() ?>assets/backend/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="">
                                  </div>
                                  <p class="notify-details">Cristina Pride</p>
                                  <p class="text-muted mb-0 user-msg">
@@ -124,8 +79,7 @@
                              <!-- item-->
                              <a href="javascript:void(0);" class="dropdown-item notify-item">
                                  <div class="notify-icon">
-                                     <img src="<?= base_url() ?>assets/backend/images/users/avatar-4.jpg"
-                                         class="img-fluid rounded-circle" alt="">
+                                     <img src="<?= base_url() ?>assets/backend/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="">
                                  </div>
                                  <p class="notify-details">Karen Robinson</p>
                                  <p class="text-muted mb-0 user-msg">
@@ -146,69 +100,9 @@
                          </div>
 
                          <!-- All-->
-                         <a href="javascript:void(0);"
-                             class="dropdown-item text-center text-primary notify-item notify-all">
+                         <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                              View All
                          </a>
-
-                     </div>
-                 </li>
-
-                 <li class="dropdown notification-list d-none d-sm-inline-block">
-                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                         aria-haspopup="false" aria-expanded="false">
-                         <i class="dripicons-view-apps noti-icon"></i>
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-
-                         <div class="p-2">
-                             <div class="row g-0">
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/slack.png" alt="slack">
-                                         <span>Slack</span>
-                                     </a>
-                                 </div>
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/github.png"
-                                             alt="Github">
-                                         <span>GitHub</span>
-                                     </a>
-                                 </div>
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/dribbble.png"
-                                             alt="dribbble">
-                                         <span>Dribbble</span>
-                                     </a>
-                                 </div>
-                             </div>
-
-                             <div class="row g-0">
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/bitbucket.png"
-                                             alt="bitbucket">
-                                         <span>Bitbucket</span>
-                                     </a>
-                                 </div>
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/dropbox.png"
-                                             alt="dropbox">
-                                         <span>Dropbox</span>
-                                     </a>
-                                 </div>
-                                 <div class="col">
-                                     <a class="dropdown-icon-item" href="#">
-                                         <img src="<?= base_url() ?>assets/backend/images/brands/g-suite.png"
-                                             alt="G Suite">
-                                         <span>G Suite</span>
-                                     </a>
-                                 </div>
-                             </div> <!-- end row-->
-                         </div>
 
                      </div>
                  </li>
@@ -220,19 +114,16 @@
                  </li>
 
                  <li class="dropdown notification-list">
-                     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#"
-                         role="button" aria-haspopup="false" aria-expanded="false">
+                     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                          <span class="account-user-avatar">
-                             <img src="<?= base_url() ?>assets/upload/poto/<?= $user['foto'] ?>" alt="user-image"
-                                 class="rounded-circle">
+                             <img src="<?= base_url() ?>assets/upload/poto/<?= $user['foto'] ?>" alt="user-image" class="rounded-circle">
                          </span>
                          <span>
                              <span class="account-user-name"><?= $user['nama'] ?></span>
                              <span class="account-position"><?= $user['username'] ?></span>
                          </span>
                      </a>
-                     <div
-                         class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                          <!-- item-->
                          <div class=" dropdown-header noti-title">
                              <h6 class="text-overflow m-0">Welcome !</h6>
