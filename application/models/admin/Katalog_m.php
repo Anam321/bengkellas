@@ -31,6 +31,16 @@ class Katalog_m extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function get_fotoproduk($id)
+    {
+
+        $this->db->select("*");
+        $this->db->from('gallery');
+        $this->db->where('produk_id', $id);
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     public function get_datafoto($id)
     {
 

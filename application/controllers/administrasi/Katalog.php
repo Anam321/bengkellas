@@ -114,63 +114,65 @@ class Katalog extends CI_Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $detailpro = $this->katalog->get_detailproduk($id);
+            $fotoproduk = $this->katalog->get_fotoproduk($id);
             $data = array();
-            $no = 1;
+
             foreach ($detailpro as $row) {
 
-                $list = '            <div class="row">
-                                        <div class="col-lg-12">
-                                            <!-- Product image -->
-                                            <a href="javascript: void(0);" class="text-center d-block mb-4">
-                                                <img src="' . base_url() . 'assets/upload/gallery/' . $row['foto'] . '" class="img-fluid" style="max-width: 280px;" alt="Product-img">
-                                            </a>
+                $list = '<div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <!-- Product image -->
+                                                <a href="javascript: void(0);" class="text-center d-block mb-4">
+                                                  <img src="' . base_url() . 'assets/upload/gallery/' . $row['foto'] . '" class="img-fluid" style="max-width: 450px;" alt="Product-img">
+                                                </a>
+                                                <div class="row">
+                                                ';
 
-                                            <div class="d-lg-flex d-none justify-content-center">
-                                                <a href="javascript: void(0);">
-                                                    <img src="' . base_url() . 'assets/backend/images/products/product-1.jpg" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img">
-                                                </a>
-                                                <a href="javascript: void(0);" class="ms-2">
-                                                    <img src="' . base_url() . 'assets/backend/images/products/product-6.jpg" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img">
-                                                </a>
-                                                <a href="javascript: void(0);" class="ms-2">
-                                                    <img src="' . base_url() . 'assets/backend/images/products/product-3.jpg" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img">
-                                                </a>
+                foreach ($fotoproduk as $fot) {
+                    $foto = $fot['foto'];
+                    $list .= ' <div class="col-lg-4"> 
+                                <a href="javascript: void(0);">
+                                                        <img src="' . base_url() . 'assets/upload/gallery/' . $foto . '" class="img-fluid img-thumbnail p-2" style="max-width: 165px;" alt="Product-img">
+                                                    </a>
+                                </div>';
+                }
+                $list .= ' </div>
+                            
+                                            </div> 
+                                            <div class="col-lg-6">
+                                                <form class="ps-lg-4">
+                                                  
+                                                    <h3 class="mt-0">' . $row['slug'] . ' <a href="javascript: void(0);" class="text-muted"><i class="mdi mdi-square-edit-outline ms-2"></i></a> </h3>
+                                                    <p class="mb-1">Added Date: ' . $this->waktu_lalu($row['date_post']) . '</p>
+
+                                             
+                                                    <div class="mt-3">
+                                                        <h4><span class="badge badge-success-lighten">Instock</span></h4>
+                                                    </div>
+
+                                            
+                                                    <div class="mt-4">
+                                                        <h6 class="font-14">Retail Price:</h6>
+                                                        <h3> IDR ' . $row['harga'] . '</h3>
+                                                    </div>
+                                                
+                                                    <div class="mt-4">
+                                                        <h6 class="font-14">Description:</h6>
+                                                      ' . $row['deskripsi'] . '
+                                                    </div>
+
+                                                </form>
                                             </div>
-                                        </div> <!-- end col -->
-                                        
-                                    </div>
-                                    <div class="row">
-                                    <div class="col-lg-12">
-                                            <form class="ps-lg-4">
-                                                <!-- Product title -->
-                                                <h3 class="mt-0">' . $row['slug'] . ' <a href="javascript: void(0);" class="text-muted"></i></a> </h3>
-                                                <p class="mb-1">Added Date: ' . $this->waktu_lalu($row['date_post']) . '</p>
-                                                <p class="font-16">
-                                                    <span class=" mdi mdi-star"></span>
-                                                    <span class=" mdi mdi-star"></span>
-                                                    <span class=" mdi mdi-star"></span>
-                                                    <span class=" mdi mdi-star"></span>
-                                                    <span class="text-warning mdi mdi-star"></span>
-                                                </p>
+                                        </div> 
 
-                                                <!-- Product stock -->
-                                                <div class="mt-3">
-                                                    <h4><span class="badge badge-success-lighten">Instock</span></h4>
-                                                </div>
-
-                                                <!-- Product description -->
-                                                <div class="mt-4">
-                                                    <h6 class="font-14">Retail Price:</h6>
-                                                    <h3> IDR ' . $row['harga'] . '</h3>
-                                                </div>
-
-                                                <!-- Product description -->
-                                                <div class="mt-4">
-                                                    <h6 class="font-14">Description:</h6>
-                                                  ' . $row['deskripsi'] . '
-                                                </div>
-                                            </form>
-                                        </div></div>';
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div>';
 
                 $data[] = $list;
             }
@@ -191,7 +193,7 @@ class Katalog extends CI_Controller
                                         
                                         <div class="card card-body">
                                     <img src="' . base_url() . 'assets/upload/gallery/' . $row['foto'] . '" alt="image" class="img-fluid rounded" />
-                                    <a href="javascript: void(0);" onclick="remove(' . $row['gallery_id'] . ')"  class="btn btn-primary">Go somewhere</a>
+                                    <a href="javascript: void(0);" onclick="remove(' . $row['gallery_id'] . ')"  class="btn btn-primary">Remove</a>
                                 </div>
                                     </div>';
 
