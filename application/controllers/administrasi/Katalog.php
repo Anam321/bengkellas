@@ -264,9 +264,11 @@ class Katalog extends CI_Controller
             if ($this->upload->do_upload('file')) {
                 $id = $this->input->post('produk_id');
                 $image_data = $this->upload->data();
+                $token = 2;
                 $data = array(
                     'foto' => $image_data['file_name'],
                     'produk_id' => $this->input->post('produk_id'),
+                    'token' => $token,
                 );
                 $insert =  $this->katalog->uploadFile($data, $id);
                 echo json_encode($insert);

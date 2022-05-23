@@ -39,7 +39,7 @@
             <li class="side-nav-title side-nav-item">Apps</li>
 
             <li class="side-nav-item">
-                <a href="<?= base_url('administrasi/profil') ?>" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+                <a href="<?= base_url('administrasi/profil/') ?>" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                     <i class="mdi mdi-account-lock "></i>
                     <span> Profil </span>
 
@@ -47,7 +47,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="<?= base_url('administrasi/katalog') ?>" aria-expanded="false" aria-controls="katalog" class="side-nav-link">
+                <a href="<?= base_url('administrasi/katalog/') ?>" aria-expanded="false" aria-controls="katalog" class="side-nav-link">
                     <i class="mdi mdi-briefcase"></i>
                     <span> Katalog </span>
 
@@ -55,14 +55,14 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="<?= base_url('administrasi/gallery') ?>" aria-expanded="false" aria-controls="sastra" class="side-nav-link">
+                <a href="<?= base_url('administrasi/gallery/') ?>" aria-expanded="false" aria-controls="sastra" class="side-nav-link">
                     <i class="mdi mdi-image-area"></i>
                     <span> Gallery </span>
 
                 </a>
             </li>
             <li class="side-nav-item">
-                <a href="<?= base_url('administrasi/tender') ?>" aria-expanded="false" aria-controls="sastra" class="side-nav-link">
+                <a href="<?= base_url('administrasi/tender/') ?>" aria-expanded="false" aria-controls="sastra" class="side-nav-link">
                     <i class="mdi mdi-book-edit"></i>
                     <span> Tender </span>
 

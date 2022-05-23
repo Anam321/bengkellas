@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 23/05/2022 12:01:04
+ Date: 23/05/2022 19:49:27
 */
 
 SET NAMES utf8mb4;
@@ -30,24 +30,20 @@ CREATE TABLE `gallery`  (
   `produk_id` int(11) NULL DEFAULT NULL,
   `token` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`gallery_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of gallery
 -- ----------------------------
-INSERT INTO `gallery` VALUES (5, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (6, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (7, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_23.jpeg', NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (8, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_27.jpeg', NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (10, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_09.jpeg', NULL, NULL, 2, NULL);
-INSERT INTO `gallery` VALUES (11, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_24.jpeg', NULL, NULL, 5, NULL);
-INSERT INTO `gallery` VALUES (18, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_37.jpeg', NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (19, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_36.jpeg', NULL, NULL, NULL, NULL);
-INSERT INTO `gallery` VALUES (20, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_27_(1).jpeg', NULL, NULL, 5, NULL);
-INSERT INTO `gallery` VALUES (21, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_07.jpeg', NULL, NULL, 5, NULL);
-INSERT INTO `gallery` VALUES (22, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_09.jpeg', NULL, NULL, 5, NULL);
-INSERT INTO `gallery` VALUES (23, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_40.jpeg', NULL, NULL, 5, NULL);
-INSERT INTO `gallery` VALUES (24, NULL, 'WhatsApp_Image_2022-04-12_at_20_39_12.jpeg', NULL, NULL, 5, NULL);
+INSERT INTO `gallery` VALUES (31, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_26.jpeg', NULL, NULL, 6, '2');
+INSERT INTO `gallery` VALUES (32, NULL, 'WhatsApp_Image_2022-04-07_at_16_47_51.jpeg', NULL, NULL, 6, '2');
+INSERT INTO `gallery` VALUES (33, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_41_(1).jpeg', NULL, NULL, 7, '2');
+INSERT INTO `gallery` VALUES (34, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_41.jpeg', NULL, NULL, 0, '2');
+INSERT INTO `gallery` VALUES (35, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_07.jpeg', NULL, NULL, 7, '2');
+INSERT INTO `gallery` VALUES (36, 'kanopi', 'kanopi-1653309837.jpeg', '2022-05-23', NULL, NULL, '1');
+INSERT INTO `gallery` VALUES (37, 'kanopi2', 'kanopi2-1653309887.jpeg', '2022-05-23', NULL, NULL, '1');
+INSERT INTO `gallery` VALUES (38, 'kanopi3', 'kanopi3-1653309901.jpeg', '2022-05-23', NULL, NULL, '1');
+INSERT INTO `gallery` VALUES (39, 'kanopi4', 'kanopi4-1653309919.jpeg', '2022-05-23', NULL, NULL, '1');
 
 -- ----------------------------
 -- Table structure for ref_produk
@@ -63,13 +59,13 @@ CREATE TABLE `ref_produk`  (
   `slug` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `harga` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`produk_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ref_produk
 -- ----------------------------
-INSERT INTO `ref_produk` VALUES (2, 'Canopy alderon', 'Canopy', '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English</p>', 'canopy-alderon-1653130689.jpeg', '2022-05-21 10:58:09', 'canopy-alderon', '125.000,00');
-INSERT INTO `ref_produk` VALUES (5, 'canopy murah meriah', 'Canopy', '<span style=\"color: rgb(108, 117, 125); font-family: Nunito, sans-serif; font-size: 14.4px;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span>', 'canopy-murah-meriah-1653139616.jpeg', '2022-05-21 13:26:10', 'canopy-murah-meriah', '125.000,00');
+INSERT INTO `ref_produk` VALUES (6, 'Canopy alderon', 'Canopy', '<span style=\"color: rgb(108, 117, 125); font-family: Nunito, sans-serif; font-size: 14.4px;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span>', 'canopy-alderon-1653296693.jpeg', '2022-05-23 09:04:53', 'canopy-alderon', '125.000,00');
+INSERT INTO `ref_produk` VALUES (7, 'canopy murah meriah', 'Canopy', '<span style=\"color: rgb(108, 117, 125); font-family: Nunito, sans-serif; font-size: 14.4px;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span>', 'canopy-murah-meriah-1653296734.jpeg', '2022-05-23 09:05:34', 'canopy-murah-meriah', '546.000,00');
 
 -- ----------------------------
 -- Table structure for set_kontak
