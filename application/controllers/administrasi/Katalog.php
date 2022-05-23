@@ -81,7 +81,12 @@ class Katalog extends CI_Controller
 
             $tbody[] = $row['kategori'];
             $tbody[] = $this->waktu_lalu($row['date_post']);
-            $ha = 'IDR ' . $row['harga'] . '';
+            if ($row['harga'] == '') {
+                $ha = 0;
+            } else {
+                $ha = 'IDR ' . $row['harga'] . '';
+            }
+
             $tbody[] = $ha;
 
             $action = '

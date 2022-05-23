@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 23/05/2022 19:49:27
+ Date: 23/05/2022 23:12:41
 */
 
 SET NAMES utf8mb4;
@@ -107,7 +107,7 @@ CREATE TABLE `set_profil`  (
 -- ----------------------------
 -- Records of set_profil
 -- ----------------------------
-INSERT INTO `set_profil` VALUES (1, 'saepul anam', 'jl. jkjkjkkkjkjkkj', 'dccfgh', '1651221939.png', '1651222435.jpg', 1, 'saepul anam', 'https://www.anamsaepul.site');
+INSERT INTO `set_profil` VALUES (1, 'Bengkel Las', 'jl. jkjkjkkkjkjkkj', 'dccfgh', '1651221939.png', '1651222435.jpg', 1, 'saepul anam', 'https://www.anamsaepul.site');
 
 -- ----------------------------
 -- Table structure for tender
@@ -115,17 +115,23 @@ INSERT INTO `set_profil` VALUES (1, 'saepul anam', 'jl. jkjkjkkkjkjkkj', 'dccfgh
 DROP TABLE IF EXISTS `tender`;
 CREATE TABLE `tender`  (
   `projek_id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `link` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
+  `nama_tender` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `jenis` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `date_post` date NULL DEFAULT NULL,
-  `foto` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `pembuatan` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `tgl_mulai` date NULL DEFAULT NULL,
+  `tgl_akhir` date NULL DEFAULT NULL,
+  `alamat` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `harga` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `volume` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `status` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`projek_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tender
 -- ----------------------------
-INSERT INTO `tender` VALUES (2, 'Web Bengkellas Rafi Utama', 'https://rafiutama.com', '2022-05-03', '1651546694.jpg');
+INSERT INTO `tender` VALUES (3, 'drgdfgfg', 'Pagar', '2022-05-23', 'grsgsfgf', '2022-05-23', '2022-06-24', 'thfghdfghfgh', '1.000.000,00', '34', 0);
 
 -- ----------------------------
 -- Table structure for tweb_kategori
