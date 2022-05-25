@@ -249,7 +249,7 @@
                 $('[name="harga"]').val(data.harga);
                 $('#summernote').summernote('code', data.deskripsi);
                 $('[name="deskripsi"]').val(data.deskripsi);
-                $('[name="foto"]').val(data.foto);
+                $('[name="old_foto"]').val(data.foto);
                 $('[#file').text(data.foto);
             },
             error: function(jqXHR, textStatus, errorThrown) {

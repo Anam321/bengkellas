@@ -34,9 +34,11 @@ class Tender extends CI_Controller
     public function datatable()
     {
         $tender = $this->tender->get_data();
+        $no = 1;
         foreach ($tender as $row) {
 
             $tbody = array();
+            $tbody[] = $no++;
             $tbody[] = $row['nama_tender'];
             $tbody[] = $row['jenis'];
             $tbody[] = $row['pembuatan'];
@@ -139,6 +141,58 @@ class Tender extends CI_Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $this->tender->delete_by_id($id);
+        }
+    }
+
+
+
+    public function old_tender()
+    {
+        $data = [
+            //title Page
+            'judul' => 'Tender | ' . $this->profil->get_profile('nama'),
+            // 'nama' => $this->profil->get_profile('nama'),
+            'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
+
+        ];
+
+        $this->load->view('themplates/header', $data);
+        $this->load->view('themplates/sidebar', $data);
+        $this->load->view('themplates/navbar', $data);
+        $this->load->view('admin/old_tender_v', $data);
+        $this->load->view('js/tender_js', $data);
+        $this->load->view('themplates/footer', $data);
+    }
+
+    public function datatables()
+    {
+        $tender = $this->tender->get_dataold();
+        $no = 1;
+        foreach ($tender as $row) {
+
+            $tbody = array();
+            $tbody[] = $no++;
+            $tbody[] = $row['nama_tender'];
+            $tbody[] = $row['jenis'];
+            $tbody[] = $row['pembuatan'];
+            if ($row['volume'] == '') {
+                $volum = 0;
+            } else {
+                $volum = '' . $row['volume'] . 'm';
+            }
+
+            $tbody[] = $volum;
+            $tbody[] = $row['tgl_mulai'];
+            $tbody[] = $row['tgl_akhir'];
+            $tbody[] = $row['harga'];
+            $tbody[] = $row['alamat'];
+
+            $data[] = $tbody;
+        }
+        if ($tender) {
+            echo json_encode(array('data' => $data));
+        } else {
+            echo json_encode(array('data' => 0));
         }
     }
 }

@@ -15,7 +15,6 @@
     <link href="<?= base_url() ?>assets/backend/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="<?= base_url() ?>assets/backend/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
-
     <link href="<?= base_url() ?>assets/backend/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url() ?>assets/backend/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
 

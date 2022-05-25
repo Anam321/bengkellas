@@ -21,11 +21,11 @@
                 <div class="card-body">
                     <div class="row mb-2">
                         <div class="col-sm-4">
-                            <a href="javascript:void(0);" onclick="addfoto()" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Foto</a>
+                            <a href="javascript:void(0);" onclick="addfoto()" class="btn btn-danger btn-sm mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Foto</a>
                         </div>
                         <div class="col-sm-8">
                             <div class="text-sm-end">
-                                <button type="button" onclick="listFoto()" class="btn btn-success mb-2 me-1"><i class="mdi mdi-autorenew"></i></button>
+                                <button type="button" onclick="listFoto()" class="btn btn-success btn-sm mb-2 me-1"><i class="mdi mdi-autorenew"></i></button>
 
                             </div>
                         </div>

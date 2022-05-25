@@ -22,18 +22,18 @@
                 <div class="card-body shadow-lg p-3 mb-5 bg-body rounded ">
                     <div class="row mb-2">
                         <div class="col-sm-4">
-                            <a href="javascript:void(0);" onclick="addProduk()" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
+                            <a href="javascript:void(0);" onclick="addProduk()" class="btn btn-danger btn-sm mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
                         </div>
                         <div class="col-sm-8">
                             <div class="text-sm-end">
-                                <button type="button" onclick="reload_table('')" class="btn btn-success mb-2 me-1"><i class="mdi mdi-autorenew"></i></button>
+                                <button type="button" onclick="reload_table('')" class="btn btn-success btn-sm mb-2 me-1"><i class="mdi mdi-autorenew"></i></button>
 
                             </div>
                         </div><!-- end col-->
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
+                        <table class="table table-centered w-100 dt-responsive table-sm  nowrap" id="products-datatable">
                             <thead class="table-light">
                                 <tr>
 
@@ -133,12 +133,7 @@
         </div>
     </div>
 </div>
-<style type="text/css">
-    .dropzone {
-        margin-top: 100px;
-        border: 2px dashed #0087F7;
-    }
-</style>
+
 
 <div id="addfoto" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-right">

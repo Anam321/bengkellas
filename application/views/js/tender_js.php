@@ -1,5 +1,6 @@
 <script type="text/javascript">
     var table; // for table
+    var tables; // for table
     var foor; // for table
     var save_method; // untuk metode save data varible global
 
@@ -10,6 +11,10 @@
 
     function reload_table() {
         table.ajax.reload(null, false); //reload datatable ajax
+    }
+
+    function reload_tables() {
+        tables.ajax.reload(null, false); //reload datatable ajax
     }
 
     function showAlert(type, msg) {
@@ -33,6 +38,31 @@
 
             "ajax": "<?= base_url("administrasi/tender/datatable") ?>",
 
+            lengthChange: !1,
+            buttons: ["copy", "print"],
+            language: {
+                paginate: {
+                    previous: "<i class='mdi mdi-chevron-left'>",
+                    next: "<i class='mdi mdi-chevron-right'>",
+                },
+                info: "Showing products _START_ to _END_ of _TOTAL_",
+                lengthMenu: 'Display <select class=\'form-select form-select-sm ms-1 me-1\'><option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> products',
+            },
+            pageLength: 5,
+
+            drawCallback: function() {
+                $(".dataTables_paginate > .pagination").addClass("pagination-rounded");
+            },
+        });
+
+    });
+
+    $(document).ready(function() {
+
+        tables = $("#datatableold").DataTable({
+
+            "ajax": "<?= base_url("administrasi/tender/datatables/") ?>",
+
             // select: {
             //     style: "multi"
             // },
@@ -53,12 +83,21 @@
 
     });
 
-
     function addtender() {
         save_method = 'add';
         $('#form')[0].reset();
         $('#modaltender').modal('show');
         $('.modal-title').text('Tambah Tender');
+    }
+
+    function tenderusai() {
+        window.location.href = "<?php echo site_url('administrasi/tender/old_tender/') ?>";
+
+    }
+
+    function backtender() {
+        window.location.href = "<?php echo site_url('administrasi/tender/') ?>";
+
     }
 
     $('#form').submit(function(e) {

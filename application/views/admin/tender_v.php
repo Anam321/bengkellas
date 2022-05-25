@@ -21,7 +21,8 @@
                 <div class="card-body shadow-lg p-3 mb-5 bg-body rounded ">
                     <div class="row mb-2">
                         <div class="col-sm-4">
-                            <a href="javascript:void(0);" onclick="addtender()" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Project</a>
+                            <a href="javascript:void(0);" onclick="addtender()" class="btn btn-danger btn-sm mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Project</a>
+                            <a href="javascript:void(0);" onclick="tenderusai()" class="btn btn-info btn-sm mb-2"><i class="mdi mdi-folder-multiple-plus me-2"></i>Data Tender</a>
                         </div>
                         <div class="col-sm-8">
                             <div class="text-sm-end">
@@ -32,9 +33,10 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table mb-0 table-centered w-100 dt-responsive nowrap" id="datatable">
+                        <table class="table mb-0 table-centered w-100 dt-responsive table-sm nowrap" id="datatable">
                             <thead class="table-light">
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama Tender</th>
                                     <th>Jenis</th>
                                     <th>Pembuatan</th>

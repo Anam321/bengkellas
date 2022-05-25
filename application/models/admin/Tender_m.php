@@ -21,6 +21,16 @@ class Tender_m extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function get_dataold()
+    {
+
+        $this->db->select("*");
+        $this->db->from('tender');
+        $this->db->where('status', 1);
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
     public function get_dataID($id)
     {

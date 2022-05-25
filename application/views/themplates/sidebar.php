@@ -78,13 +78,13 @@
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="<?= base_url('identitasDesa') ?>">Artikel</a>
+                            <a href="<?= base_url('administrasi/artikel/') ?>">Artikel</a>
                         </li>
                         <li>
                             <a href="<?= base_url('wilayahAdministrasi') ?>">Testimoni</a>
                         </li>
                         <li>
-                            <a href="apps-ecommerce-products-details.html">Contact</a>
+                            <a href="apps-ecommerce-products-details.html">Message</a>
                         </li>
 
                     </ul>

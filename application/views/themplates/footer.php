@@ -136,7 +136,6 @@
  <script src="<?= base_url() ?>assets/backend/js/pages/demo.toastr.js"></script>
 
 
-
  <!-- third party js -->
  <script src="<?= base_url() ?>assets/backend/js/vendor/jquery.dataTables.min.js"></script>
  <script src="<?= base_url() ?>assets/backend/js/vendor/dataTables.bootstrap5.js"></script>
@@ -151,6 +150,18 @@
  <script src="<?= base_url() ?>assets/backend/js/vendor/dataTables.select.min.js"></script>
  <!-- third party js ends -->
 
+
+
+
+ <!-- Typehead -->
+ <script src="<?= base_url() ?>assets/backend//js/vendor/handlebars.min.js"></script>
+ <script src="<?= base_url() ?>assets/backend//js/vendor/typeahead.bundle.min.js"></script>
+
+ <!-- Demo -->
+ <script src="<?= base_url() ?>assets/backend//js/pages/demo.typehead.js"></script>
+
+ <!-- Timepicker -->
+ <script src="<?= base_url() ?>assets/backend//js/pages/demo.timepicker.js"></script>
  <!-- demo app -->
  <!-- <script src="<?= base_url() ?>assets/backend/js/pages/demo.datatable-init.js"></script> -->
  <!-- end demo js-->
