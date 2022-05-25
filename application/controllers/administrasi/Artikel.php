@@ -17,7 +17,7 @@ class Artikel extends CI_Controller
     {
         $data = [
             //title Page
-            'judul' => 'Tender | ' . $this->profil->get_profile('nama'),
+            'judul' => 'Artikel | ' . $this->profil->get_profile('nama'),
             // 'nama' => $this->profil->get_profile('nama'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
 
@@ -31,6 +31,33 @@ class Artikel extends CI_Controller
         $this->load->view('themplates/footer', $data);
     }
 
+    function waktu_lalu($timestamp)
+    {
+        $selisih = time() - strtotime($timestamp);
+        $detik = $selisih;
+        $menit = round($selisih / 60);
+        $jam = round($selisih / 3600);
+        $hari = round($selisih / 86400);
+        $minggu = round($selisih / 604800);
+        $bulan = round($selisih / 2419200);
+        $tahun = round($selisih / 29030400);
+        if ($detik <= 60) {
+            $waktu = $detik . ' detik yang lalu';
+        } else if ($menit <= 60) {
+            $waktu = $menit . ' menit yang lalu';
+        } else if ($jam <= 24) {
+            $waktu = $jam . ' jam yang lalu';
+        } else if ($hari <= 7) {
+            $waktu = $hari . ' hari yang lalu';
+        } else if ($minggu <= 4) {
+            $waktu = $minggu . ' minggu yang lalu';
+        } else if ($bulan <= 12) {
+            $waktu = $bulan . ' bulan yang lalu';
+        } else {
+            $waktu = $tahun . ' tahun yang lalu';
+        }
+        return $waktu;
+    }
 
     public function list_artikel()
     {
@@ -78,8 +105,12 @@ class Artikel extends CI_Controller
 
                      <p class="mb-3">
                          <span class="pe-2 text-nowrap">
-                             <i class="mdi mdi-format-list-bulleted-type"></i>
+                             <i class="mdi mdi-eye"></i>
                              <b>3</b> Tasks
+                         </span>
+                         <span class="pe-2 text-nowrap">
+                             <i class="mdi mdi-clock-time-four"></i>
+                             <b>' . $this->waktu_lalu($row['date_post']) . '</b> 
                          </span>
                          <span class="text-nowrap">
                              <i class="mdi mdi-comment-multiple-outline"></i>

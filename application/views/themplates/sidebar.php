@@ -81,10 +81,10 @@
                             <a href="<?= base_url('administrasi/artikel/') ?>">Artikel</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('wilayahAdministrasi') ?>">Testimoni</a>
+                            <a href="<?= base_url('administrasi/testimoni/') ?>">Testimoni</a>
                         </li>
                         <li>
-                            <a href="apps-ecommerce-products-details.html">Message</a>
+                            <a href="<?= base_url('administrasi/inbox/') ?>">Message</a>
                         </li>
 
                     </ul>

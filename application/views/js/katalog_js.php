@@ -284,7 +284,7 @@
 
     function remove(id) {
         if (confirm('Apakah Anda yakin menghapus data ini ?')) {
-            // ajax delete data to database
+            var id_foto = id;
             $.ajax({
                 url: "<?php echo site_url('administrasi/katalog/delete_foto/') ?>" + id,
                 type: "POST",
@@ -292,10 +292,11 @@
                 success: function(data) {
                     if (data.status == '00') {
                         showAlert(data.type, data.mess);
+                        addfoto(id_foto);
 
                     } else {
                         showAlert(data.type, data.mess);
-
+                        addfoto(id_foto);
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
