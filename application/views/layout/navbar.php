@@ -50,7 +50,7 @@
                         <a href="<?= base_url('katalog') ?>" class="nav-item nav-link">Katalog</a>
                         <a href="<?= base_url('gallery') ?>" class="nav-item nav-link">Gallery</a>
                         <a href="<?= base_url('artikel') ?>" class="nav-item nav-link">Artikel</a>
-                        <a href="<?= base_url('testimoni') ?>" class="nav-item nav-link">Testimoni</a>
+
 
                         <a href="<?= base_url('contact') ?>" class="nav-item nav-link">Contact</a>
                     </div>

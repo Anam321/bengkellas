@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 27/05/2022 02:29:36
+ Date: 27/05/2022 05:35:47
 */
 
 SET NAMES utf8mb4;
@@ -83,7 +83,7 @@ CREATE TABLE `message`  (
   `trash` int(11) NULL DEFAULT NULL,
   `foto` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_cont`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of message
@@ -91,6 +91,10 @@ CREATE TABLE `message`  (
 INSERT INTO `message` VALUES (1, 'saepul anam', 'lestariyuli27@yahoo.com', 'percobaan', 'Dapatkan Akses Mudah Pelayanan Kami. Kami Akan Membantu Anda Untuk Mewujud kan Impian Anda Dan  Nikmati Keindahan Nya', '2022-04-13 00:30:00', 0, 0, 'avatar-3.jpg');
 INSERT INTO `message` VALUES (5, 'Brianna Belton', 'briannawebsolution@gmail.com', 'Re: Want more clients and customers?', 'Hope you are doing well,\r\n\r\nAs I see you have a newly launched website, not showing on top search engines like Google/Bing/Yahoo. If you are on page #1 you will get so many new customers every day.\r\nIf you want to avail this opportunity.\r\n\r\n10 plus years of Experience | Partnered with 20+ Digital Agencies | 60+ SEO, SMO - SEM Google Ads Certified Professionals (Google ads, Bing ads, FB ads etc.), expert website designers & developers.\r\n\r\nPlease share your phone number/ Whatsapp (With Country Code)/Skype and suitable time (Meeting) to talk to you,  I\'d be happy to explain to you our plan and strategy.\r\n\r\nLooking forward to your reply,\r\nBrianna BeltonHope you are doing well,\r\n\r\nAs I see you have a newly launched website, not showing on top search engines like Google/Bing/Yahoo. If you are on page #1 you will get so many new customers every day.\r\nIf you want to avail this opportunity.\r\n\r\n10 plus years of Experience | Partnered with 20+ Digital Agencies | 60+ SEO, SMO - SEM Google Ads Certified Professionals (Google ads, Bing ads, FB ads etc.), expert website designers & developers.\r\n\r\nPlease share your phone number (With Country Code)/Skype and suitable time (Meeting) to talk to you,  I\'d be happy to explain to you our plan and strategy.\r\n\r\nLooking forward to your reply,\r\nBrianna Belton', '2022-04-20 05:12:26', 1, 0, 'avatar-4.jpg');
 INSERT INTO `message` VALUES (6, 'Sandi solehudin', 'sandigordon456@gmail.com', 'Terimakasih', 'Kerja nya sangat memuaskan detail dan rapih', '2022-05-19 17:28:03', 0, 1, 'avatar-5.jpg');
+INSERT INTO `message` VALUES (12, 'Bengkel bzdfh', 'rizkibengkellas@gmail.com', 'fgzfzfz', NULL, '2022-05-26 22:15:56', NULL, 1, 'default.png');
+INSERT INTO `message` VALUES (13, 'yuyun', 'meinfo@anamsaepul.site', 'fgnzgnzfnzf', NULL, '2022-05-26 22:26:44', NULL, 1, 'default.png');
+INSERT INTO `message` VALUES (15, 'jujun', 'rizkibengkellas@gmail.com', 'percobaan ke 2', '<p>thzdthzdtjzdtjzh thxdhtdxthx htxdzdrgxdg ergzdfgzfh zrg</p>', '2022-05-26 22:31:19', 1, 0, 'default.png');
+INSERT INTO `message` VALUES (16, 'Bengkel ', 'meinfo@anamsaepul.site', 'tututuut', '<p>hdjggggggggggggyjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjcf xfgnxfhxfyjxfjxfjxy</p>', '2022-05-26 22:32:59', 1, 0, 'default.png');
 
 -- ----------------------------
 -- Table structure for ref_produk

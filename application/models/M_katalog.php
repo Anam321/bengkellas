@@ -32,10 +32,36 @@ class M_katalog extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    function get_prod($slug)
+    {
+        $this->db->select('*');
+        $this->db->from('ref_produk');
+        $this->db->where('slug', $slug);
+
+        $query = $this->db->get();
+        return $query;
+    }
+    function get_foto($id)
+    {
+        $this->db->select('*');
+        $this->db->from('gallery');
+        $this->db->where('produk_id', $id);
+
+        $query = $this->db->get();
+        return $query;
+    }
 
 
 
-
+    public function get_artikel()
+    {
+        $this->db->select('*');
+        $this->db->from('artikel a');
+        $this->db->order_by('artikel_id', 'DESC');
+        $this->db->limit(12);
+        $query = $this->db->get();
+        return $query;
+    }
 
 
 
@@ -79,15 +105,15 @@ class M_katalog extends CI_Model
         return $query;
     }
 
-    public function get_artikel()
-    {
-        $this->db->select('*');
-        $this->db->from('artikel a');
-        $this->db->order_by('artikel_id', 'DESC');
-        $this->db->limit(12);
-        $query = $this->db->get();
-        return $query;
-    }
+    // public function get_artikel()
+    // {
+    //     $this->db->select('*');
+    //     $this->db->from('artikel a');
+    //     $this->db->order_by('artikel_id', 'DESC');
+    //     $this->db->limit(12);
+    //     $query = $this->db->get();
+    //     return $query;
+    // }
 
 
 

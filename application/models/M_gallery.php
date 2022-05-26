@@ -22,21 +22,14 @@ class M_gallery extends CI_Model
         return $query;
     }
 
-    public function get_detailhistor($id)
+    public function get_gallery()
     {
-
-        $this->db->select("*");
-        $this->db->from('histori');
-        $this->db->where('histori_id', $id);
-
+        $this->db->select('*');
+        $this->db->from('gallery');
+        $this->db->where('token', 1);
+        $this->db->order_by('gallery_id', 'DESC');
+        $this->db->limit(12);
         $query = $this->db->get();
-        return $query->result_array();
-
-        // AJAX SERVERSIDE :
-
-        // $query = $this->db->get();
-        // if (count($query->result()) > 0) {
-        //     return $query->row();
-        // }
+        return $query;
     }
 }

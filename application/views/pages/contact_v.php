@@ -1,142 +1,105 @@
-<main id="main">
-    <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
-
-            <div class="d-flex justify-content-between align-items-center">
-                <h2>Contact Us</h2>
-                <ol>
-                    <li><a href="<?= base_url() ?>">Home</a></li>
-                    <li>Contact Us</li>
-                </ol>
+<div class="container-fluid bg-secondary py-5">
+    <div class="container py-5">
+        <div class="row align-items-center py-4">
+            <div class="col-md-6 text-center text-md-left">
+                <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Contact Us</h1>
             </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Contact</h2>
-
+            <div class="col-md-6 text-center text-md-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="btn btn-outline-primary" href="">Home</a>
+                    <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                    <a class="btn btn-outline-primary disabled" href="">Contact Us</a>
+                </div>
             </div>
-
         </div>
+    </div>
+</div>
+<!-- Page Header Start -->
 
 
-
-        <div class="container">
-            <div id="notifalert"></div>
-            <div class="row mt-5">
-
-                <div class="col-lg-6">
-                    <div class="mb-2" style="width: 100%"><iframe width="100%" height="600" frameborder="0"
-                            scrolling="no" marginheight="0" marginwidth="0"
-                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Jl.%20M.%20Jali%20No.9,%20RT.001/RW.002,%20Kunciran%20Jaya,%20Kec.%20Pinang,%20Kota%20Tangerang,%20Banten%2015144+(Bengkel%20Las%20RIZKI)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
-                                href="https://www.gps.ie/marine-gps/">ship tracker</a></iframe></div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="info-box">
-                                <i class="bx bx-map"></i>
-                                <h3>Our Address</h3>
-                                <p><?= $alamat ?></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <i class="bx bx-envelope"></i>
-                                <h3>Email Us</h3>
-                                <p><?= $email ?></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <i class="bx bx-phone-call"></i>
-                                <h3>Call Us</h3>
-                                <p>+62 <?= $telpon ?></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <div class="social-links mt-3">
-                                    <a href="<?= $whatsap ?>" class="twitter"><i class="bx bxl-whatsapp"></i></a>
-                                    <h3>Get Us</h3>
-                                    <p>+62 <?= $whatsap ?></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <div class="social-links mt-3">
-                                    <a href="<?= $instagram ?>" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                    <h3>Click Us</h3>
-                                    <a href="<?= $instagram ?>">
-                                        <p><?= $instagram ?></p>
-                                    </a>
-
-                                </div>
-                            </div>
+<!-- Contact Start -->
+<div class="container-fluid bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                    <div class="d-inline-flex border border-secondary p-4 mb-4">
+                        <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h4>Alamat</h4>
+                            <p class="m-0 text-white"><?= $alamat ?></p>
                         </div>
                     </div>
-
+                    <div class="d-inline-flex border border-secondary p-4 mb-4">
+                        <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h4>Email Us</h4>
+                            <p class="m-0 text-white"><?= $email ?></p>
+                        </div>
+                    </div>
+                    <div class="d-inline-flex border border-secondary p-4">
+                        <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
+                        <div class="d-flex flex-column">
+                            <h4>Call Us</h4>
+                            <p class="m-0 text-white">+62 <?= $telpon ?></p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="col-lg-6">
-                    <form id="form">
-                        <div class="row">
-                            <div class="col form-group">
-                                <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap"
-                                    required>
-                            </div>
-                            <div class="col form-group mt-3">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Email Valid" required>
-                            </div>
+            </div>
+            <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+                <div class="contact-form">
+                    <div id="notifalert"></div>
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <input type="text" class="form-control p-4" id="name" name="nama" placeholder="Masukan Nama Lengkap" required="required" data-validation-required-message="Please enter your name" />
+                            <p class="help-block text-danger"></p>
                         </div>
-                        <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                required>
+                        <div class="control-group">
+                            <input type="email" class="form-control p-4" id="email" name="email" placeholder="Masukan Email" required="required" data-validation-required-message="Please enter your email" />
+                            <p class="help-block text-danger"></p>
                         </div>
-                        <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                        <div class="control-group">
+                            <input type="text" class="form-control p-4" id="subject" name="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                            <p class="help-block text-danger"></p>
                         </div>
-
-                        <div class="text-center mt-2"><button type="submit" class="btn appointment-btn"
-                                id="btnSave">Send
-                                Message</button></div>
+                        <div class="control-group">
+                            <textarea id="summernote" class="form-control p-4" rows="6" id="message" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-3 px-5" type="submit" id="btnSave">Send Message</button>
+                        </div>
                     </form>
                 </div>
-
             </div>
-
         </div>
-    </section>
+    </div>
+</div>
 
 
+<script>
+    // function showAlert(type, msg) {
 
+    //     toastr.options.closeButton = true;
+    //     toastr.options.progressBar = true;
+    //     toastr.options.extendedTimeOut = 1000; //1000
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
-    function showAlert(type, msg) {
+    //     toastr.options.timeOut = 3000;
+    //     toastr.options.fadeOut = 250;
+    //     toastr.options.fadeIn = 250;
 
-        toastr.options.closeButton = true;
-        toastr.options.progressBar = true;
-        toastr.options.extendedTimeOut = 1000; //1000
+    //     toastr.options.positionClass = 'toast-top-center';
+    //     toastr[type](msg);
+    // }
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
 
-        toastr.options.timeOut = 3000;
-        toastr.options.fadeOut = 250;
-        toastr.options.fadeIn = 250;
-
-        toastr.options.positionClass = 'toast-top-center';
-        toastr[type](msg);
-    }
 
     function notif() {
         $('#notifalert').empty();
         $.ajax({
-            url: "<?php echo site_url('contact_us/alertnotif') ?>",
+            url: "<?php echo site_url('contact/alertnotif') ?>",
             type: "POST",
             dataType: "JSON",
             success: function(data) {
@@ -148,18 +111,14 @@
         });
     }
 
-    $('#form').submit(function(e) {
-        // alert("Form submitted!");
+    $('#contactForm').submit(function(e) {
         e.preventDefault();
-        var form = $('#form')[0];
+        var form = $('#contactForm')[0];
         var data = new FormData(form);
-
         $('#btnSave').text('Sedang Proses, Mohon tunggu...'); //change button text
         $('#btnSave').attr('disabled', true); //set button disable
-
-
         $.ajax({
-            url: "<?php echo site_url('contact_us/input') ?>",
+            url: "<?php echo site_url('contact/input_message') ?>",
             type: "POST",
             //contentType: 'multipart/form-data',
             cache: false,
@@ -171,14 +130,15 @@
 
             success: function(data) {
                 if (data.status == '00') {
-                    showAlert(data.type, data.mess);
-                    $('#form')[0].reset();
+                    // showAlert(data.type, data.mess);
+                    $('#contactForm')[0].reset();
+                    $('#summernote').summernote('code', '');
                     notif();
-                } else {
-                    showAlert(data.type, data.mess);
-                }
 
-                $('#btnSave').text('Simpan'); //change button text
+                } else {
+                    // showAlert(data.type, data.mess);
+                }
+                $('#btnSave').text('Send Message'); //change button text
                 $('#btnSave').attr('disabled', false); //set button enable
                 $('#btnSave').attr('hide', false); //set button enable
             },
@@ -186,12 +146,11 @@
                 type = 'error';
                 msg = 'Error adding / update data';
                 showAlert(type, msg); //utk show alert
-                $('#btnSave').text('Simpan'); //change button text
+                $('#btnSave').text('Send Message'); //change button text
                 $('#btnSave').attr('disabled', false); //set button enable
                 $('#btnSave').attr('hide', false); //set button enable
             }
         });
 
     });
-    </script>
-</main>
+</script>

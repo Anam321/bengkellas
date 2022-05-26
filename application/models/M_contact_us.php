@@ -4,18 +4,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_contact_us extends CI_Model
 {
 
-    public function input($data)
+
+    public function input_message($data)
     {
-        $r = $this->db->insert('contact_us', $data);
+        $r = $this->db->insert('message', $data);
 
         if ($r) {
             $res['status'] = '00';
             $res['type'] = 'success';
-            $res['mess'] = 'Berhasil di Tambahkan';
+            $res['mess'] = 'Pesan Berhasil Di Kirim';
         } else {
             $res['status'] = '01';
             $res['type'] = 'warning';
-            $res['mess'] = 'gagal di Tambahkan. Kesalahan saat menyimpan data !';
+            $res['mess'] = 'Pesan gagal Di Kirim !';
         }
         return $res;
     }

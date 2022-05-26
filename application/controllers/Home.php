@@ -57,24 +57,7 @@ class Home extends CI_Controller
             'artikel' => $this->home->get_artikel()->result(),
             'deskripsi' => $this->profil->get_profile('deskripsi'),
 
-            // 'deskripsi' => $this->profil->get_profile('deskripsi'),
-            // 'logo' => $this->profil->get_profile('logo'),
-            // 'alamat' => $this->profil->get_profile('alamat'),
-            // 'telpon' => $this->profil->get_kontak('telpon'),
-            // 'email' => $this->profil->get_kontak('email'),
-            // 'whatsap' => $this->profil->get_kontak('whatsap'),
-            // 'facebook' => $this->profil->get_kontak('facebook'),
-            // 'instagram' => $this->profil->get_kontak('instagram'),
-            // 'foto' => $this->profil->get_profile('foto'),
 
-
-            // 'slide' => $this->home->get_slide(),
-            // 'slideparent' => $this->home->get_slideparent(),
-            // 'produk' => $this->home->get_produk()->result(),
-            // 'histori' => $this->home->get_histori()->result(),
-            // 'testimoni' => $this->home->get_testimoni()->result(),
-            // 'artikel' => $this->home->get_artikel()->result(),
-            // 'roadmap' => $this->home->get_roadmap()->result(),
 
 
         ];

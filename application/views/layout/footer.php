@@ -17,7 +17,9 @@
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
 <script src="<?= base_url() ?>assets/frontend/lib/easing/easing.min.js"></script>
 <script src="<?= base_url() ?>assets/frontend/lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>assets/frontend/lib/isotope/isotope.pkgd.min.js"></script>
@@ -29,6 +31,9 @@
 
 <!-- Template Javascript -->
 <script src="<?= base_url() ?>assets/frontend/js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script src="<?= base_url() ?>assets/backend/js/pages/demo.toastr.js"></script>
 </body>
 
 </html>
