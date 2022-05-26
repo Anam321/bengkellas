@@ -27,6 +27,17 @@ class Inbox_m extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function get_navmessage()
+    {
+        $this->db->select('*');
+        $this->db->from('message');
+        $this->db->where('hits', 1);
+        $this->db->order_by('id_cont', 'DESC');
+        $this->db->limit(5);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     public function get_databyid($id)
     {
         $this->db->select('*');

@@ -28,6 +28,7 @@ class Artikel extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/artikel_v', $data);
         $this->load->view('js/artikel_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

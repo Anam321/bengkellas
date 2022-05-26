@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 26/05/2022 01:41:54
+ Date: 27/05/2022 02:29:36
 */
 
 SET NAMES utf8mb4;
@@ -59,10 +59,10 @@ CREATE TABLE `gallery`  (
 -- ----------------------------
 -- Records of gallery
 -- ----------------------------
-INSERT INTO `gallery` VALUES (31, NULL, 'WhatsApp_Image_2022-04-07_at_16_34_26.jpeg', NULL, NULL, 6, '2');
-INSERT INTO `gallery` VALUES (33, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_41_(1).jpeg', NULL, NULL, 7, '2');
-INSERT INTO `gallery` VALUES (34, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_41.jpeg', NULL, NULL, 0, '2');
-INSERT INTO `gallery` VALUES (35, NULL, 'WhatsApp_Image_2022-04-12_at_20_00_07.jpeg', NULL, NULL, 7, '2');
+INSERT INTO `gallery` VALUES (31, 'Canopy alderon', 'WhatsApp_Image_2022-04-07_at_16_34_26.jpeg', NULL, NULL, 6, '2');
+INSERT INTO `gallery` VALUES (33, 'canopy murah meriah', 'WhatsApp_Image_2022-04-12_at_20_00_41_(1).jpeg', NULL, NULL, 7, '2');
+INSERT INTO `gallery` VALUES (34, 'Canopy alderon', 'WhatsApp_Image_2022-04-12_at_20_00_41.jpeg', NULL, NULL, 6, '2');
+INSERT INTO `gallery` VALUES (35, 'canopy murah meriah', 'WhatsApp_Image_2022-04-12_at_20_00_07.jpeg', NULL, NULL, 7, '2');
 INSERT INTO `gallery` VALUES (36, 'kanopi', 'kanopi-1653309837.jpeg', '2022-05-23', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (37, 'kanopi2', 'kanopi2-1653309887.jpeg', '2022-05-23', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (38, 'kanopi3', 'kanopi3-1653309901.jpeg', '2022-05-23', NULL, NULL, '1');
@@ -106,13 +106,37 @@ CREATE TABLE `ref_produk`  (
   `slug` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `harga` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`produk_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ref_produk
 -- ----------------------------
 INSERT INTO `ref_produk` VALUES (6, 'Canopy alderon', 'Canopy', '<span style=\"color: rgb(108, 117, 125); font-family: Nunito, sans-serif; font-size: 14.4px;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span>', 'canopy-alderon-1653296693.jpeg', '2022-05-23 09:04:53', 'canopy-alderon', '125.000,00');
 INSERT INTO `ref_produk` VALUES (7, 'canopy murah meriah', 'Canopy', '<span style=\"color: rgb(108, 117, 125); font-family: Nunito, sans-serif; font-size: 14.4px;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.</span>', 'canopy-murah-meriah-1653296734.jpeg', '2022-05-23 09:05:34', 'canopy-murah-meriah', '546.000,00');
+INSERT INTO `ref_produk` VALUES (8, 'Raling Tangga', 'Tangga', 'fgjxgjxgjxdgjxf', 'raling-tangga-1653592420.jpeg', '2022-05-26 19:13:40', 'raling-tangga', '125.000,00');
+INSERT INTO `ref_produk` VALUES (9, 'Pagar minimalis', 'Pagar', 'fbzdgnzdnzdxgnzdg', 'pagar-minimalis-1653592479.jpeg', '2022-05-26 19:14:39', 'pagar-minimalis', '125.000,00');
+INSERT INTO `ref_produk` VALUES (10, 'Jendela tralis', 'Tralis', 'dgsndtmnfzntgzdngzd', 'jendela-tralis-1653592518.jpeg', '2022-05-26 19:15:18', 'jendela-tralis', '125.000,00');
+
+-- ----------------------------
+-- Table structure for set_hero
+-- ----------------------------
+DROP TABLE IF EXISTS `set_hero`;
+CREATE TABLE `set_hero`  (
+  `hero_id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `paragraf` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `foto` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `is_active` int(11) NOT NULL,
+  `link` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `class` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`hero_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of set_hero
+-- ----------------------------
+INSERT INTO `set_hero` VALUES (1, 'Selamat Datang', 'Des adfjbbadjvbjdvbjbdvb lbdlvbobdvbkldnl', 'selamat-datang-1653548354.jpg', 1, 'https://aksesstermi', 'active');
+INSERT INTO `set_hero` VALUES (2, 'hxgdh', 'sdfbasbfafbnadnd', 'hxgdh-1653549837.jpg', 1, 'https://aksesstermifghzdfdf', NULL);
 
 -- ----------------------------
 -- Table structure for set_kontak
@@ -154,7 +178,7 @@ CREATE TABLE `set_profil`  (
 -- ----------------------------
 -- Records of set_profil
 -- ----------------------------
-INSERT INTO `set_profil` VALUES (1, 'Bengkel Las', 'jl. jkjkjkkkjkjkkj', 'dccfgh', '1651221939.png', '1651222435.jpg', 1, 'saepul anam', 'https://www.anamsaepul.site');
+INSERT INTO `set_profil` VALUES (1, 'Bengkel Las Sinar Mulya', 'jl. bendungan depok no 09', 'Kami menyediakan produk aksesoris rumah, kantor, apartemen, atau fasilitas umum lainnya dengan berbahan besi. Produk yang kami kerjakan dapat di-customized sesuai keinginan pelanggan. Pelanggan utama adalah kontraktor, individual yang membangun rumah maupun designer yang ingin memesan design yang terbuat dari bahan besi. Kami juga melayani service / perbaikan / perawatan berbagai aksesoris rumah yang terbuat dari besi. Sebagian dari contoh-contoh produk yang kami kerjakan dapat dilihat di website ini.\r\nJika memungkinkan, kami melayani survey lapangan dan konsultasi gratis', '1653587312.png', '1653558661.jpg', 1, 'saepul anam', 'https://www.anamsaepul.site');
 
 -- ----------------------------
 -- Table structure for tender
@@ -201,7 +225,7 @@ CREATE TABLE `testimoni`  (
 -- Records of testimoni
 -- ----------------------------
 INSERT INTO `testimoni` VALUES (1, 'saepul anam', 'jackston9@gmail.com', 'avatar-3.jpg', 1, '2022-04-17', 'Saya senang order di sni, pekerjaan bagus dan cepat, pelayan sangat baik tidak mengecewakan sam sekali. saya sudah lama berlangganan di sini.', 0);
-INSERT INTO `testimoni` VALUES (2, 'mang japrut', 'japrut.mail@gmail.com', 'avatar-4.jpg', 0, '2022-04-17', 'luarbbiasa pemasangan rapih dan memuaskan', 0);
+INSERT INTO `testimoni` VALUES (2, 'mang japrut', 'japrut.mail@gmail.com', 'avatar-4.jpg', 1, '2022-04-17', 'luarbbiasa pemasangan rapih dan memuaskan', 0);
 
 -- ----------------------------
 -- Table structure for tweb_kategori

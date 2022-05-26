@@ -28,6 +28,7 @@ class Tender extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/tender_v', $data);
         $this->load->view('js/tender_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

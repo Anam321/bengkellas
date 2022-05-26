@@ -57,6 +57,7 @@
     function addProduk() {
         save_method = 'add';
         $('#form')[0].reset();
+        $('#imagePreview').html('');
         $('#summernote').summernote('code', '');
         $('#staticBackdrop').modal('show');
         $('.modal-title').text('Tambah Produk');
@@ -67,6 +68,7 @@
     function addfoto(id) {
         var id_produk = id;
         $('#fileUpload')[0].reset();
+        $('#imagePreview').html('');
         $('#addfoto').modal('show');
         $('#fotoProduk').empty();
         $('[name="produk_id"]').val(id);
@@ -234,6 +236,7 @@
         save_method = 'update';
         $('#form')[0].reset();
         $('#staticBackdrop').modal('show');
+        $('#imagePreview').html('');
         $('.modal-title').text('Edit Produk');
         $('#summernote').summernote('code', '');
 

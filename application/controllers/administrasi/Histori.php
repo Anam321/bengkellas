@@ -30,6 +30,7 @@ class Histori extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/histori_v', $data);
         $this->load->view('js/histori_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

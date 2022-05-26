@@ -28,6 +28,7 @@ class Testimoni extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/testimoni_v', $data);
         $this->load->view('js/testimoni_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

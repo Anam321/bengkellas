@@ -1,437 +1,285 @@
-<style>
-* {
-    box-sizing: border-box;
-}
+<!-- Carousel Start -->
+<div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
 
-.column {
-    float: left;
-    width: 20.33%;
-    padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Tata letak responsif - membuat ketiga kolom bertumpuk, bukan bersebelahan */
-@media screen and (max-width: 500px) {
-    .column {
-        width: 45%;
-        padding: 5px;
-        margin: auto;
-    }
-}
-
-</style>
-
-<?php
-function waktu_lalu($timestamp)
-{
-    $selisih = time() - strtotime($timestamp);
-    $detik = $selisih;
-    $menit = round($selisih / 60);
-    $jam = round($selisih / 3600);
-    $hari = round($selisih / 86400);
-    $minggu = round($selisih / 604800);
-    $bulan = round($selisih / 2419200);
-    $tahun = round($selisih / 29030400);
-    if ($detik <= 60) {
-        $waktu = $detik . ' detik yang lalu';
-    } else if ($menit <= 60) {
-        $waktu = $menit . ' menit yang lalu';
-    } else if ($jam <= 24) {
-        $waktu = $jam . ' jam yang lalu';
-    } else if ($hari <= 7) {
-        $waktu = $hari . ' hari yang lalu';
-    } else if ($minggu <= 4) {
-        $waktu = $minggu . ' minggu yang lalu';
-    } else if ($bulan <= 12) {
-        $waktu = $bulan . ' bulan yang lalu';
-    } else {
-        $waktu = $tahun . ' tahun yang lalu';
-    }
-    return $waktu;
-}
-?>
-
-
-
-
-<section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-            <?php foreach ($slideparent as $parent) : ?>
-            <div class="carousel-item active"
-                style="background-image: url(<?= base_url() ?>assets/upload/hero/<?= $parent['gambar'] ?>)">
-                <div class="container">
-                    <h2><?= $parent['judul_slid'] ?></h2>
-                    <p><?= $parent['paragraf'] ?></p>
-                    <a href="<?= $parent['link'] ?>" class="btn-get-started scrollto">Read More</a>
-                </div>
-            </div>
-            <?php endforeach ?>
             <?php foreach ($slide as $hero) : ?>
-            <div class="carousel-item"
-                style="background-image: url(<?= base_url() ?>assets/upload/hero/<?= $hero['gambar'] ?>)">
-                <div class="container">
-                    <h2><?= $hero['judul_slid'] ?></h2>
-                    <p><?= $hero['paragraf'] ?></p>
-                    <a href="<?= base_url() ?><?= $hero['link'] ?>" class="btn-get-started scrollto">Read More</a>
-                </div>
-            </div>
-            <?php endforeach ?>
+                <div class="carousel-item <?= $hero->class ?>">
 
+                    <img class="w-100" src="<?= base_url() ?>assets/upload/gallery/<?= $hero->foto ?>" alt="Image" height="850">
+
+
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 800px;">
+                            <h4 class="text-primary text-uppercase font-weight-normal mb-md-3"><?= $hero->paragraf ?></h4>
+                            <h3 class="display-3 text-white mb-md-4"><?= $hero->judul ?></h3>
+                            <a href="<?= $hero->link ?>" class="btn btn-primary py-md-3 px-md-5 mt-2 mt-md-4">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
 
         </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+            <div class="btn btn-primary" style="width: 45px; height: 45px;">
+                <span class="carousel-control-prev-icon mb-n2"></span>
+            </div>
         </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+            <div class="btn btn-primary" style="width: 45px; height: 45px;">
+                <span class="carousel-control-next-icon mb-n2"></span>
+            </div>
         </a>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- About Start -->
+
+
+<!-- Services Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 pr-lg-5">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Awesome Services</h6>
+                <h1 class="mb-4 section-title">
+                    Jasa Bengkel Las Terbaik Untuk Rumah Anda</h1>
+                <p><?= $deskripsi ?></p>
+                <a href="" class="btn btn-primary mt-3 py-2 px-4">View More</a>
+            </div>
+            <div class="col-lg-6 p-0 pt-5 pt-lg-0">
+                <div class="owl-carousel service-carousel position-relative">
+                    <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                        <h3 class=" display-3 font-weight-normal text-primary mb-3"> <i class="fas fa-university"></i></h3>
+                        <h5 class="mb-3">Las Canopy</h5>
+                        <p class="m-0">Menerima Pembuatan dan Design Canopy</p>
+                    </div>
+                    <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                        <h3 class=" display-3 font-weight-normal text-primary mb-3"> <i class="fas fa-gopuram"></i></h3>
+                        <h5 class="mb-3">Raling Tangga</h5>
+                        <p class="m-0">Jasa Pembuatan Raling Tangga</p>
+                    </div>
+                    <div class="d-flex flex-column text-center bg-light mx-3 p-4">
+                        <h3 class=" display-3 font-weight-normal text-primary mb-3"> <i class="fas fa-warehouse"></i></h3>
+                        <h5 class="mb-3">Pagar Tralis</h5>
+                        <p class="m-0">Jasa Pembuatan Pagar Tralis dengan Bahan Yang Brkualitas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+
+<!-- Features Katalog -->
+<div class="container-fluid bg-light pt-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col text-center mb-4">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Katalog</h6>
+                <h1 class="mb-4">Pilih Design Yang Anda Sukai yang Pas Untuk Rumah Anda</h1>
+            </div>
+        </div>
+
+
+        <div class="row pb-3">
+            <?php foreach ($dataKatalog as $katalog) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="<?= base_url() ?>assets/upload/gallery/<?= $katalog->foto ?>" alt="">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-primary" href="<?= base_url() ?>katalog/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>"><i class="fa fa-link"></i></a>
+
+                                <a href="<?= base_url() ?>katalog/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>">
+                                    <h5 class="m-0 ml-3 text-truncate"><?= $katalog->nama_produk ?></h5>
+                                </a>
+                            </div>
+                            <!-- <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p> -->
+                            <div class="d-flex">
+                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> 23</small>
+                                <small class="mr-3"><i class="fa fa-folder text-primary"></i> <?= $katalog->kategori ?></small>
+                                <!-- <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <?php endforeach ?>
+        </div>
+
+        <div class="row pb-3">
+
+            <div class="col-md-4 mb-4">
+
+                <div class="d-flex align-items-center mb-3">
+                    <a class="btn btn-primary" href="<?= base_url() ?>katalog">
+                        <h5 class=" m-0 ml-3 text-truncate">Lihat Lainya </h5> <i class="fa fa-arrow-right "></i>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
 
     </div>
-</section>
 
-<main id="main">
+</div>
+</div>
+<!-- Features End -->
 
 
-    <section id="cta" class="cta">
-        <div class="container" data-aos="zoom-in">
-
-            <div class="text-center">
-                <h3>Keadaan Darurat? Bingung Cari Jasa Bengkel Las Yang Professional?</h3>
-                <p> Kami akan membantu anda kapan pun anda butuhkan, dan kami siap melayani anda dengan baik.</p>
-                <a class="cta-btn scrollto" href="<?= base_url() ?>contact_us">Make an Make an Appointment</a>
+<!-- Projects Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col text-center mb-4">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Gallery</h6>
+                <h1 class="mb-4">Gallery</h1>
             </div>
-
         </div>
-    </section>
 
+        <div class="row mx-1 portfolio-container">
 
-    <section id="about" class="about">
-        <div class="container shadow p-3 mb-5 bg-body rounded" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="<?= base_url() ?>assets/upload/poto/<?= $foto ?>" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <?= $deskripsi ?>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="counts" class="counts">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row no-gutters">
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-shopping-cart"></i>
-
-                        <?php foreach ($roadmap as $row) : ?>
-                        <span data-purecounter-start="0" data-purecounter-end="<?= $row->pesanan ?>"
-                            data-purecounter-duration="1" class="purecounter"></span>
-                        <?php endforeach ?>
-                        <p><strong>Pesanan</strong> Untuk Semua Custumer</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-cogs"></i>
-
-                        <?php foreach ($roadmap as $row) : ?>
-                        <span data-purecounter-start="0" data-purecounter-end="<?= $row->perbaikan ?>"
-                            data-purecounter-duration="1" class="purecounter"></span>
-                        <?php endforeach ?>
-                        <p><strong>Perbaikan</strong> Semua Produk</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-map"></i>
-
-                        <?php foreach ($roadmap as $row) : ?>
-                        <span data-purecounter-start="0" data-purecounter-end="<?= $row->wilayah ?>"
-                            data-purecounter-duration="1" class="purecounter"></span>
-                        <?php endforeach ?>
-                        <p><strong>Wilayah Kota</strong> Jangkauan Dan Track map</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-edit"></i>
-                        <?php foreach ($roadmap as $row) : ?>
-                        <span data-purecounter-start="0" data-purecounter-end="<?= $row->design ?>"
-                            data-purecounter-duration="1" class="purecounter"></span>
-                        <?php endforeach ?>
-                        <p><strong>Design</strong> Untuk Pesanan Custum</p>
-                        <a href="#">Find out more &raquo;</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="doctors" class="doctors section-bg">
-        <div class="container" data-aos="fade-up">
-
-
-
-            <div class="section-title">
-                <h2>Produk</h2>
-                <a href="<?= base_url('produk') ?>">
-                    <p>Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></p>
-                </a>
-            </div>
-
-            <div class="row">
-                <?php foreach ($produk as $row) : ?>
-                <?php $id = $row->produk_id ?>
-                <?php $lihat = $this->db->query("SELECT * FROM produk_visit WHERE produk_id='" . $id . "'")->num_rows(); ?>
-                <div class="column">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img">
-                            <a href="<?= base_url() ?>produk/detail_produk/<?= $row->slug ?>/<?= $row->produk_id ?>">
-                                <img src="<?= base_url() ?>assets/upload/gallery/<?= $row->foto ?>" class="img-fluid"
-                                    alt=""></a>
-                            <div class="social">
-                                <a href="#"><i class="fas fa-eye"></i><?= $lihat ?></a>
-                                <!-- <a href="#"><i class="fas fa-comment-alt"></i> 12 comment</a> -->
-                                <!-- <a href=""><i class="fas fa-clock">2 menit</i></a> -->
-
+            <?php foreach ($gallery as $row) : ?>
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item <?= $row->nama_foto ?>">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img class="img-fluid" src="<?= base_url() ?>assets/upload/gallery/<?= $row->foto ?>" alt="">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4"><?= $row->nama_foto ?></h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="javascript:void(0);">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <a class="btn btn-outline-primary m-1" href="<?= base_url() ?>assets/upload/gallery/<?= $row->foto ?>" data-lightbox="portfolio">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4><?= $row->nama_produk ?></h4>
-                            <span>
-                                <a href="#"><i class="fas fa-clock"> <?= waktu_lalu($row->date_post) ?></i></a>
-                            </span>
-                        </div>
                     </div>
                 </div>
-                <?php endforeach ?>
-            </div>
+            <?php endforeach ?>
 
         </div>
-    </section><!-- End Doctors Section -->
+    </div>
+</div>
+<!-- Projects End -->
 
 
-    <section id="services" class="services services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Services</h2>
-                <p>Dapatkan Akses Mudah Pelayanan Kami. Kami Akan Membantu Anda Untuk Mewujud kan Impian Anda Dan
-                    Nikmati Keindahan Nya</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon"><i class="fas fa-briefcase"></i></div>
-                    <h4 class="title"><a href="">Perbaikan</a></h4>
-
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon"><i class="fas fa-wrench"></i></div>
-                    <h4 class="title"><a href="">Pembuatan</a></h4>
-
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-briefcase-medical"></i></div>
-                    <h4 class="title"><a href="">Perawatan</a></h4>
-
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h4 class="title"><a href="">Konsultasi</a></h4>
-
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon"><i class="fas fa-diagnoses"></i></div>
-                    <h4 class="title"><a href="">Design</a></h4>
-
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-ruler-combined"></i></div>
-                    <h4 class="title"><a href="">Pemasangan</a></h4>
-
+<!-- Team Start -->
+<div class="container-fluid bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="py-5 px-4 h-100 bg-primary d-flex flex-column align-items-center justify-content-center">
+                    <h6 class="text-white font-weight-normal text-uppercase mb-3">Produk</h6>
+                    <h1 class="mb-0 text-center">Best Produk</h1>
                 </div>
             </div>
+            <div class="col-md-8 col-sm-6 p-0 py-sm-5">
+                <div class="owl-carousel team-carousel position-relative p-0 py-sm-5">
 
-        </div>
-    </section>
-
-
-    <section id="gallery" class="gallery">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Gallery</h2>
-                <p>Gallery foto yang di ambil dari histori kerja dan kinerja kami, yang tersebarpngerjaan di beberapa
-                    tempat atau wilayah</p>
-            </div>
-
-            <div class="gallery-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-
-
-
-                    <?php foreach ($histori as $gallery) : ?>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                            href="<?= base_url() ?>assets/upload/gallery/<?= $gallery->foto ?>"><img
-                                src="<?= base_url() ?>assets/upload/gallery/<?= $gallery->foto ?>" class="img-fluid"
-                                alt=""></a>
-                    </div>
-                    <?php endforeach ?>
-                </div>
-                <div class="swiper-pagination"></div>
-                <a href="<?= base_url('gallery') ?>">
-                    <p>Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></p>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section id="testimonials" class="testimonials">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Testimonials</h2>
-                <p>Beberapa feedback dan penilaian clien kami yang kami, yang sudah mencoba pelayanan dan menggunakan
-                    jasa kami</p>
-            </div>
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-
-                    <?php foreach ($testimoni as $fed) : ?>
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item shadow p-3 mb-5 bg-body rounded">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                <?= $fed->testi ?>
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="<?= base_url() ?>assets/upload/poto/<?= $fed->foto ?>" class="testimonial-img"
-                                alt="">
-                            <h3> <?= $fed->nama ?></h3>
-                            <h4> <?= $fed->email ?></h4>
+                    <?php foreach ($bsproduk as $bs) : ?>
+                        <div class="team d-flex flex-column text-center mx-3">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="<?= base_url() ?>assets/upload/gallery/<?= $bs->foto ?>" alt="">
+                                <!-- <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div> -->
+                            </div>
+                            <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <a href="<?= base_url() ?>katalog/<?= $bs->slug ?>/<?= $bs->produk_id ?>">
+                                    <h5 class="text-white"><?= $bs->nama_foto ?></h5>
+                                </a>
+                                <p class="m-0"><?= $bs->kategori ?></p>
+                            </div>
                         </div>
-                    </div><!-- End testimonial item -->
                     <?php endforeach ?>
 
-
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="mt-5">
-                    <a href="<?= base_url('testimoni') ?>">
-                        <p>Beri kami penilaian, atau lihat testimoni lainya <i class="fas fa-arrow-right"></i></p>
-                    </a>
-                </div>
-
             </div>
-
         </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Blog Artikel</h2>
-                <div class="mt-5">
-                    <a href="<?= base_url('artikel') ?>">
-                        <p>Berita Lainnya <i class="fas fa-arrow-right"></i></p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="blog">
+    </div>
+</div>
+<!-- Team End -->
 
 
-                <div class="row">
+<!-- Testimonial Start -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 py-5 pr-md-5">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Testimonial</h6>
+                <h1 class="mb-4 section-title">Apa yang dikatan Client Kami</h1>
+                <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
 
-                    <?php foreach ($artikel as $blog) : ?>
-                    <?php $text = $blog->konten;
-                        $limitext = word_limiter($text, 35);
-                        ?>
-                    <?php $id = $blog->artikel_id ?>
-                    <?php $lihat = $this->db->query("SELECT * FROM artikel_visit WHERE artikel_id='" . $id . "'")->num_rows(); ?>
-
-
-
-                    <div class="column">
-                        <div class="blog-item shadow p-3 mb-5 bg-body rounded">
-                            <div class="blog-img">
-                                <img src="<?= base_url() ?>assets/upload/artikel/<?= $blog->foto ?>" alt="Image">
-
+                    <?php foreach ($testimoni as $testi) : ?>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3">
+                                <img class="img-fluid rounded-circle" src="<?= base_url() ?>assets/upload/poto/<?= $testi->foto ?>" style="width: 60px; height: 60px;" alt="">
+                                <div class="ml-3">
+                                    <h5><?= $testi->nama ?></h5>
+                                    <i><?= $testi->email ?></i>
+                                </div>
                             </div>
-                            <div class="blog-text">
-                                <h3><a
-                                        href="<?= base_url('artikel/single/') ?><?= $blog->slug ?>/<?= $blog->artikel_id ?>"><?= $blog->judul_artikel ?></a>
-                                </h3>
-                                <p>
-                                    <?= $limitext ?>
-                                </p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><i class="fa fa-user"></i><a href=""><?= $blog->penerbit ?></a></p>
-                                <p><i class="fa fa-eye"></i><a href=""><?= $lihat ?> View</a></p>
-                                <p><i class="fa fa-comments"></i><a href="">Not Fitures</a></p>
-                            </div>
-
+                            <p><?= $testi->testi ?></p>
                         </div>
-                        <div class="mb-5">
-                            <blockquote class="blockquote mb-0">
-                                <footer class="blockquote-footer"><cite
-                                        title="Source Title"><?= waktu_lalu($blog->date_post) ?></cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-
-
-
-
                     <?php endforeach ?>
                 </div>
-
             </div>
-
+            <div class="col-md-5">
+                <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
+                    <img class="h-100" src="<?= base_url() ?>assets/upload/poto/<?= $foto ?>" alt="">
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- Testimonial End -->
 
 
+<!-- Blog Start -->
+<div class="container-fluid bg-light pt-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col text-center mb-4">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Our Blog</h6>
+                <h1 class="mb-4">Artikel Terbaru</h1>
+            </div>
+        </div>
+        <div class="row pb-3">
 
-</main>
+            <?php foreach ($artikel as $blog) : ?>
+                <?php $text = $blog->konten;
+                $limitext = word_limiter($text, 25);
+                ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="<?= base_url() ?>assets/upload/artikel/<?= $blog->foto ?>" alt="">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
+                                <h5 class="m-0 ml-3 text-truncate"><?= $blog->judul_artikel ?></h5>
+                            </div>
+                            <p><?= $limitext ?></p>
+                            <div class="d-flex">
+                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
+                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> 20</small>
+                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>

@@ -86,6 +86,9 @@
                         <li>
                             <a href="<?= base_url('administrasi/inbox/') ?>">Message</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url('administrasi/slider/') ?>">Slider</a>
+                        </li>
 
                     </ul>
                 </div>

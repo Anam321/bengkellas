@@ -25,8 +25,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-6">
-                            <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Campaign
-                                Sent</h5>
+                            <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Pengunjung</h5>
                             <h3 class="my-2 py-1">9,184</h3>
                             <p class="mb-0 text-muted">
                                 <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
@@ -49,7 +48,7 @@
                     <div class="row align-items-center">
                         <div class="col-6">
                             <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">
-                                New Leads</h5>
+                                Produk</h5>
                             <h3 class="my-2 py-1">3,254</h3>
                             <p class="mb-0 text-muted">
                                 <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>

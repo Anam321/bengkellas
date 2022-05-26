@@ -28,6 +28,7 @@ class Gallery extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/gallery_v', $data);
         $this->load->view('js/gallery_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

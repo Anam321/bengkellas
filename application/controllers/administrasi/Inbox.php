@@ -216,6 +216,32 @@ class Inbox extends CI_Controller
         }
     }
 
+
+    public function navmessage()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $navmesage = $this->inbox->get_navmessage();
+            $data = array();
+            foreach ($navmesage as $row) {
+                $text = $row['message'];
+                $limitext = word_limiter($text, 10);
+                $list = '<a onclick="allmessage()" href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon">
+                                     <img src="' . base_url() . 'assets/upload/poto/' . $row['foto'] . '" class="img-fluid rounded-circle" alt="">
+                                 </div>
+                                 <p class="notify-details">' . $row['nama'] . '</p>
+                                 <p class="text-muted mb-0 user-msg">
+                                     <small>' . $limitext . '</small>
+                                 </p>
+                             </a>';
+
+                $data[] = $list;
+            }
+
+            echo json_encode($data);
+        }
+    }
+
     public function hits($id)
     {
         $id_cont = $id;

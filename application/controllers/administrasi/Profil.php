@@ -29,6 +29,7 @@ class Profil extends CI_Controller
         $this->load->view('themplates/navbar', $data);
         $this->load->view('admin/profil_v', $data);
         $this->load->view('js/profile_js', $data);
+        $this->load->view('js/navbar_js', $data);
         $this->load->view('themplates/footer', $data);
     }
 

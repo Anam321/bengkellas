@@ -46,6 +46,26 @@
     }
     listmessage();
 
+
+    function navmessage() {
+        $('#navlismessage').empty();
+        $.ajax({
+            url: "<?php echo site_url('administrasi/inbox/navmessage/') ?>",
+            type: "POST",
+            dataType: "JSON",
+            success: function(data) {
+                $('#navlismessage').html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert('Error get data from ajax');
+            }
+        });
+    }
+    navmessage();
+
+
+
     function listtrash() {
 
         $('#listinbox').empty();
@@ -93,6 +113,11 @@
             dataType: "JSON",
             success: function(data) {
                 $('#jmlhnotif').text(data);
+                if (data > 0) {
+                    $('#notif').html('<span class="noti-icon-badge"></span>');
+                }
+
+
 
 
             },
@@ -149,6 +174,10 @@
         }
     }
 
+    function allmessage() {
+        window.location.href = "<?php echo site_url('administrasi/inbox/') ?>";
+
+    }
 
     // function section2(id) {
     //     $('#sectionid2').empty();
