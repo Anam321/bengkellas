@@ -6,82 +6,160 @@
             </div>
             <div class="col-md-6 text-center text-md-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="btn btn-outline-primary" href="">Home</a>
+                    <a class="btn btn-outline-primary" href="<?= base_url('') ?>">Home</a>
                     <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                    <a class="btn btn-outline-primary disabled" href="">Katalog</a>
+                    <a class="btn btn-outline-primary" href="<?= base_url('katalog') ?>">Katalog</a>
+                    <i class="fas fa-angle-double-right text-primary mx-2"></i>
+                    <a class="btn btn-outline-primary disabled" href="">Detail</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid bg-light pt-5">
+<?php
+function waktu_lalu($timestamp)
+{
+    $selisih = time() - strtotime($timestamp);
+    $detik = $selisih;
+    $menit = round($selisih / 60);
+    $jam = round($selisih / 3600);
+    $hari = round($selisih / 86400);
+    $minggu = round($selisih / 604800);
+    $bulan = round($selisih / 2419200);
+    $tahun = round($selisih / 29030400);
+    if ($detik <= 60) {
+        $waktu = $detik . ' detik yang lalu';
+    } else if ($menit <= 60) {
+        $waktu = $menit . ' menit yang lalu';
+    } else if ($jam <= 24) {
+        $waktu = $jam . ' jam yang lalu';
+    } else if ($hari <= 7) {
+        $waktu = $hari . ' hari yang lalu';
+    } else if ($minggu <= 4) {
+        $waktu = $minggu . ' minggu yang lalu';
+    } else if ($bulan <= 12) {
+        $waktu = $bulan . ' bulan yang lalu';
+    } else {
+        $waktu = $tahun . ' tahun yang lalu';
+    }
+    return $waktu;
+}
+?>
 
 
-    <div class="container py-5">
+<div class="container py-5">
+    <div class="row pt-5">
+        <div class="col-lg-8">
 
-        <?php foreach ($detproduk as $produk) : ?>
-            <div class="card">
-                <!-- card left -->
-                <div class="product-imgs">
-                    <div class="img-display">
-                        <div class="img-showcase">
-                            <img src="<?= base_url() ?>assets/upload/gallery/<?= $produk->foto ?>" alt="shoe image">
+            <?php foreach ($detproduk as $produk) : ?>
+                <?php $id = $produk->produk_id;
+                $visitprod = $this->db->query("SELECT * FROM section_visit WHERE produk_id='" . $id . "'")->num_rows(); ?>
+                <div class="col-12">
+                    <!-- card left -->
+                    <div class="product-imgs">
+                        <div class="img-display">
+                            <div class="img-showcase">
+                                <img src="<?= base_url() ?>assets/upload/gallery/<?= $produk->foto ?>" alt="shoe image">
 
-                            <?php foreach ($lisfoto as $foto) : ?>
-                                <img src="<?= base_url() ?>assets/upload/gallery/<?= $foto->foto ?>" alt="shoe image">
+                                <?php foreach ($lisfoto as $foto) : ?>
+                                    <img src="<?= base_url() ?>assets/upload/gallery/<?= $foto->foto ?>" alt="shoe image">
+                                <?php endforeach ?>
+                            </div>
+                        </div>
+                        <div class="img-select">
+                            <div class="img-item">
+
+                                <a href="#" data-id="1">
+                                    <img src="<?= base_url() ?>assets/upload/gallery/<?= $produk->foto ?>" alt="shoe image" height="100">
+                                </a>
+
+                            </div>
+                            <?php $no = 2;
+                            foreach ($lisfoto as $foto) : ?>
+                                <div class="img-item">
+                                    <a href="#" data-id="<?= $no ?>">
+                                        <img src="<?= base_url() ?>assets/upload/gallery/<?= $foto->foto ?>" alt="shoe image" height="100">
+                                    </a>
+                                </div>
                             <?php endforeach ?>
                         </div>
                     </div>
-                    <div class="img-select">
-                        <div class="img-item">
-
-                            <a href="#" data-id="1">
-                                <img src="<?= base_url() ?>assets/upload/gallery/<?= $produk->foto ?>" alt="shoe image" height="100">
-                            </a>
-
-                        </div>
-                        <?php $no = 2;
-                        foreach ($lisfoto as $foto) : ?>
-                            <div class="img-item">
-                                <a href="#" data-id="<?= $no ?>">
-                                    <img src="<?= base_url() ?>assets/upload/gallery/<?= $foto->foto ?>" alt="shoe image" height="100">
-                                </a>
-                            </div>
-                        <?php endforeach ?>
-                    </div>
-                </div>
-                <!-- card right -->
-                <div class="product-content">
-                    <h2 class="product-title"><?= $produk->nama_produk ?></h2>
-                    <a href="#" class="product-link"><i class="fa fa-eye "></i> 3</a>
+                    <!-- card right -->
+                    <div class="product-content">
+                        <h2 class="product-title"><?= $produk->nama_produk ?></h2>
+                        <a href="#" class="product-link"><i class="fa fa-eye "></i> <?= $visitprod ?></a>
 
 
-                    <!-- <div class="product-price">
+                        <!-- <div class="product-price">
                     <p class="last-price">Old Price: <span>$257.00</span></p>
                     <p class="new-price">New Price: <span>$249.00 (5%)</span></p>
                 </div> -->
 
-                    <div class="product-detail">
-                        <h2>Deskripsi </h2>
-                        <p><?= $produk->deskripsi ?></p>
+                        <div class="product-detail">
+                            <h2>Deskripsi </h2>
+                            <p><?= $produk->deskripsi ?></p>
 
-                    </div>
-                    <div class="purchase-info">
+                        </div>
+                        <div class="purchase-info">
 
-                        <button type="button" class="btn btn-primary">
-                            <i class="fab fa-whatsapp text-light"></i> Pesan Sekarang
-                        </button>
-                        <a href="<?= base_url() ?>katalog"><button type="button" class="btn btn-dark">Kembali</button></a>
+                            <a onclick="whatsappTracking()" href="https://api.whatsapp.com/send?phone=+62<?= $whatsap ?>&text=Halo%20<?= $perusahaan ?>,%20Saya%20mau%20order%20produk%20ini%20<?= base_url() ?>produk/detail_produk/<?= $produk->slug ?>" target="_blank"><button type="button" class="btn btn-primary">
+                                    <i class="fab fa-whatsapp text-light"></i> Pesan Sekarang
+                                </button></a>
+                            <a href="<?= base_url() ?>katalog"><button type="button" class="btn btn-dark">Kembali</button></a>
+                        </div>
                     </div>
                 </div>
+            <?php endforeach ?>
+
+
+            <div class="mb-5 mx-n3 mt-5">
+                <h3 class="mb-4 ml-3 section-title">Related Produk</h3>
+                <div class="owl-carousel service-carousel position-relative">
+
+                    <?php foreach ($B_produk as $prod) : ?>
+                        <?php $text = $prod->deskripsi;
+                        $limitext = word_limiter($text, 30);
+                        ?>
+
+                        <?php $id = $prod->produk_id;
+                        $visitproduk = $this->db->query("SELECT * FROM section_visit WHERE produk_id='" . $id . "'")->num_rows(); ?>
+                        <div class="card border-0 mx-3">
+                            <img class="card-img-top" src="<?= base_url() ?>assets/upload/gallery/<?= $prod->foto ?>" alt="">
+                            <div class="card-body bg-light p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <a class="btn btn-primary" href="<?= base_url() ?>katalog/detailproduk/<?= $prod->slug ?>/<?= $prod->produk_id ?>"><i class="fa fa-link"></i></a>
+                                    <a href="<?= base_url() ?>katalog/detailproduk/<?= $prod->slug ?>/<?= $prod->produk_id ?>">
+                                        <h5 class="m-0 ml-3 text-truncate"><?= $prod->nama_produk ?></h5>
+                                    </a>
+                                </div>
+                                <p><?= $limitext ?></p>
+                                <div class="d-flex">
+                                    <small class="mr-3"><i class="fa fa-eye text-primary"></i> <?= $visitproduk ?></small>
+                                    <small class="mr-3"><i class="fa fa-folder text-primary"></i> <?= $prod->kategori ?></small>
+                                    <small class="mr-3"><i class="fa fa-clock text-primary"></i> <?= waktu_lalu($prod->date_post) ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+
+                </div>
             </div>
-        <?php endforeach ?>
+        </div>
 
+        <?php $this->load->view('pages/right_v') ?>
     </div>
-
-
 </div>
+
+<script>
+    function whatsappTracking() {
+        $.ajax({
+            url: "<?php echo site_url('home/whatsappTracking') ?>",
+            type: "POST",
+        });
+
+    }
+</script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');

@@ -78,4 +78,40 @@ class Profil_m extends CI_Model
         }
         return $res;
     }
+
+
+
+    // ---------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------
+
+    // data untuk fronend right bar
+
+
+    function get_B_produk()
+    {
+        $this->db->select('*');
+        $this->db->from('ref_produk');
+        $this->db->where('best', 1);
+        $this->db->order_by('produk_id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+    function produklimit()
+    {
+        $this->db->select('*');
+        $this->db->from('ref_produk');
+        $this->db->limit(8);
+        $this->db->order_by('produk_id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+    function art()
+    {
+        $this->db->select('*');
+        $this->db->from('artikel');
+        $this->db->limit(8);
+        $this->db->order_by('artikel_id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
 }

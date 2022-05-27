@@ -30,6 +30,10 @@ class About extends CI_Controller
             'foto' => $this->profil->get_profile('foto'),
             'deskripsi' => $this->profil->get_profile('deskripsi'),
 
+            'B_produk' => $this->profil->get_B_produk()->result(),
+            'produklimit' => $this->profil->produklimit()->result(),
+            'artikellimit' => $this->profil->art()->result(),
+
 
         ];
         $this->load->view('layout/header', $data);

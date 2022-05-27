@@ -4,14 +4,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_artikel extends CI_Model
 {
 
-    function get_artikel($limit, $start)
+    // public function get_artikel()
+    // {
+    //     $this->db->select('*');
+    //     $this->db->from('artikel');
+    //     $this->db->order_by('artikel_id', 'DESC');
+    //     $query = $this->db->get();
+    //     return $query->result_array();
+    // }
+    public function get_artikel()
     {
-        $this->db->where('is_active', 1);
-        $query = $this->db->get('artikel', $limit, $start);
+        $this->db->select('*');
+        $this->db->from('artikel a');
+        $this->db->order_by('artikel_id', 'DESC');
+        $this->db->limit(12);
+        $query = $this->db->get();
         return $query;
     }
-
-    function get_artikelByid($slug)
+    function get_artikelbyid($slug)
     {
         $this->db->select('*');
         $this->db->from('artikel');
@@ -20,41 +30,18 @@ class M_artikel extends CI_Model
         $query = $this->db->get();
         return $query;
     }
-    function get_artikelpost()
-    {
 
-        $this->db->select('*');
-        $this->db->from('artikel');
-        $this->db->where('is_active', 1);
-        $this->db->order_by('artikel_id', 'DESC');
-        $this->db->limit(6);
-        $query = $this->db->get();
-        return $query;
-    }
-    function get_produk()
-    {
-
-        $this->db->select('*');
-        $this->db->from('produk');
-
-        $this->db->order_by('produk_id', 'DESC');
-        $this->db->limit(6);
-        $query = $this->db->get();
-        return $query;
-    }
-    function get_gallery()
-    {
-
-        $this->db->select('*');
-        $this->db->from('histori');
-
-        $this->db->order_by('histori_id', 'DESC');
-        $this->db->limit(6);
-        $query = $this->db->get();
-        return $query;
-    }
     public function input_visit($data)
     {
-        $this->db->insert('artikel_visit', $data);
+        $this->db->insert('section_visit', $data);
     }
+
+    // function get_artikel($limit, $start)
+    // {
+    //     $this->db->where('is_active', 1);
+    //     $query = $this->db->get('artikel', $limit, $start);
+    //     return $query;
+    // }
+
+
 }

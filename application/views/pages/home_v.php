@@ -1,4 +1,35 @@
+<?php
+function waktu_lalu($timestamp)
+{
+    $selisih = time() - strtotime($timestamp);
+    $detik = $selisih;
+    $menit = round($selisih / 60);
+    $jam = round($selisih / 3600);
+    $hari = round($selisih / 86400);
+    $minggu = round($selisih / 604800);
+    $bulan = round($selisih / 2419200);
+    $tahun = round($selisih / 29030400);
+    if ($detik <= 60) {
+        $waktu = $detik . ' detik yang lalu';
+    } else if ($menit <= 60) {
+        $waktu = $menit . ' menit yang lalu';
+    } else if ($jam <= 24) {
+        $waktu = $jam . ' jam yang lalu';
+    } else if ($hari <= 7) {
+        $waktu = $hari . ' hari yang lalu';
+    } else if ($minggu <= 4) {
+        $waktu = $minggu . ' minggu yang lalu';
+    } else if ($bulan <= 12) {
+        $waktu = $bulan . ' bulan yang lalu';
+    } else {
+        $waktu = $tahun . ' tahun yang lalu';
+    }
+    return $waktu;
+}
+?>
 <!-- Carousel Start -->
+
+
 <div class="container-fluid p-0">
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -87,22 +118,24 @@
 
         <div class="row pb-3">
             <?php foreach ($dataKatalog as $katalog) : ?>
+                <?php $id = $katalog->produk_id;
+                $visitorprod = $this->db->query("SELECT * FROM section_visit WHERE produk_id='" . $id . "'")->num_rows(); ?>
                 <div class="col-md-4 mb-4">
                     <div class="card border-0 mb-2">
                         <img class="card-img-top" src="<?= base_url() ?>assets/upload/gallery/<?= $katalog->foto ?>" alt="">
                         <div class="card-body bg-white p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href="<?= base_url() ?>katalog/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>"><i class="fa fa-link"></i></a>
+                                <a class="btn btn-primary" href="<?= base_url() ?>katalog/detailproduk/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>"><i class="fa fa-link"></i></a>
 
-                                <a href="<?= base_url() ?>katalog/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>">
+                                <a href="<?= base_url() ?>katalog/detailproduk/<?= $katalog->slug ?>/<?= $katalog->produk_id ?>">
                                     <h5 class="m-0 ml-3 text-truncate"><?= $katalog->nama_produk ?></h5>
                                 </a>
                             </div>
                             <!-- <p>Diam amet eos at no eos sit, amet rebum ipsum clita stet, diam sea est diam eos, sit vero stet justo</p> -->
                             <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> 23</small>
+                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> <?= $visitorprod ?></small>
                                 <small class="mr-3"><i class="fa fa-folder text-primary"></i> <?= $katalog->kategori ?></small>
-                                <!-- <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small> -->
+                                <small class="mr-3"><i class="fa fa-clock text-primary"></i> <?= waktu_lalu($katalog->date_post) ?></small>
                             </div>
                         </div>
                     </div>
@@ -168,6 +201,16 @@
             <?php endforeach ?>
 
         </div>
+
+        <div class="row pb-3 mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <a class="btn btn-primary" href="<?= base_url() ?>gallery">
+                        <h5 class=" m-0 ml-3 text-truncate">Lihat Lainya </h5> <i class="fa fa-arrow-right "></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Projects End -->
@@ -187,6 +230,7 @@
                 <div class="owl-carousel team-carousel position-relative p-0 py-sm-5">
 
                     <?php foreach ($bsproduk as $bs) : ?>
+
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
                                 <img class="img-fluid w-100" src="<?= base_url() ?>assets/upload/gallery/<?= $bs->foto ?>" alt="">
@@ -197,7 +241,7 @@
                                 </div> -->
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <a href="<?= base_url() ?>katalog/<?= $bs->slug ?>/<?= $bs->produk_id ?>">
+                                <a href="<?= base_url() ?>katalog/detailproduk/<?= $bs->slug ?>/<?= $bs->produk_id ?>">
                                     <h5 class="text-white"><?= $bs->nama_foto ?></h5>
                                 </a>
                                 <p class="m-0"><?= $bs->kategori ?></p>
@@ -219,6 +263,7 @@
         <div class="row">
             <div class="col-md-7 py-5 pr-md-5">
                 <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Testimonial</h6>
+                <button onclick="addtesti()" class="btn btn-sm btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Masukan Testimoni</button>
                 <h1 class="mb-4 section-title">Apa yang dikatan Client Kami</h1>
                 <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
 
@@ -246,6 +291,49 @@
 </div>
 <!-- Testimonial End -->
 
+<div class="modal fade" id="modaltesti" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form" action="">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer01" class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama" required>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer01" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer01" class="form-label">Foto</label>
+                            <input type="file" class="form-control" name="foto" required>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationTextarea" class="form-label">Textarea</label>
+                            <textarea class="form-control" name="testi" placeholder="Required example textarea" required></textarea>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" id="btnSave" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Blog Start -->
 <div class="container-fluid bg-light pt-5">
@@ -262,19 +350,23 @@
                 <?php $text = $blog->konten;
                 $limitext = word_limiter($text, 25);
                 ?>
+                <?php $id = $blog->artikel_id;
+                $visitartik = $this->db->query("SELECT * FROM section_visit WHERE artikel_id='" . $id . "'")->num_rows(); ?>
                 <div class="col-md-4 mb-4">
                     <div class="card border-0 mb-2">
                         <img class="card-img-top" src="<?= base_url() ?>assets/upload/artikel/<?= $blog->foto ?>" alt="">
                         <div class="card-body bg-white p-4">
                             <div class="d-flex align-items-center mb-3">
-                                <a class="btn btn-primary" href=""><i class="fa fa-link"></i></a>
-                                <h5 class="m-0 ml-3 text-truncate"><?= $blog->judul_artikel ?></h5>
+                                <a class="btn btn-primary" href="<?= base_url() ?>artikel/single/<?= $blog->slug ?>/<?= $blog->artikel_id ?>"><i class="fa fa-link"></i></a>
+                                <a href="<?= base_url() ?>artikel/single/<?= $blog->slug ?>/<?= $blog->artikel_id ?>">
+                                    <h5 class="m-0 ml-3 text-truncate"><?= $blog->judul_artikel ?></h5>
+                                </a>
                             </div>
                             <p><?= $limitext ?></p>
                             <div class="d-flex">
-                                <small class="mr-3"><i class="fa fa-user text-primary"></i> Admin</small>
-                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> 20</small>
-                                <small class="mr-3"><i class="fa fa-comments text-primary"></i> 15</small>
+                                <small class="mr-3"><i class="fa fa-user text-primary"></i> <?= $blog->penerbit ?></small>
+                                <small class="mr-3"><i class="fa fa-eye text-primary"></i> <?= $visitartik ?></small>
+                                <small class="mr-3"><i class="fa fa-clock text-primary"></i> <?= waktu_lalu($blog->date_post) ?></small>
                             </div>
                         </div>
                     </div>
@@ -283,3 +375,97 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+    function showAlert(type, msg) {
+
+        toastr.options.closeButton = true;
+        toastr.options.progressBar = true;
+        toastr.options.extendedTimeOut = 1000; //1000
+
+        toastr.options.timeOut = 3000;
+        toastr.options.fadeOut = 250;
+        toastr.options.fadeIn = 250;
+
+        toastr.options.positionClass = 'toast-top-center';
+        toastr[type](msg);
+    }
+
+    function fileValidation() {
+        var fileInput = document.getElementById('file');
+        var filePath = fileInput.value;
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+            fileInput.value = '';
+            return false;
+        } else {
+            //Image preview
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').innerHTML = '<img style="max-width:350px;" src="' + e.target
+                        .result + '"/>';
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    }
+
+    function addtesti() {
+
+        $('#form')[0].reset();
+        // $('#imagePreview').html('');
+
+        $('#modaltesti').modal('show');
+        $('.modal-title').text('Tambah Testimoni Anda');
+    }
+
+
+    $('#form').submit(function(e) {
+        e.preventDefault();
+        var form = $('#form')[0];
+        var data = new FormData(form);
+
+        if ($('[name="foto"]').val() == '') {
+            alert('Pilih Foto Produk Yang Akan di Upload !');
+            return false;
+        }
+
+        $('#btnSave').text('Sedang Proses, Mohon tunggu...'); //change button text
+        $('#btnSave').attr('disabled', true); //set button disable
+        $.ajax({
+            url: "<?php echo site_url('home/inputtesti/') ?>",
+            type: "POST",
+            //contentType: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+            data: data,
+            dataType: "JSON",
+
+            success: function(data) {
+                if (data.status == '00') {
+                    showAlert(data.type, data.mess);
+                    $('#modaltesti').modal('hide');
+                    $('#form')[0].reset();
+                } else {
+                    showAlert(data.type, data.mess);
+                }
+                $('#btnSave').text('Simpan'); //change button text
+                $('#btnSave').attr('disabled', false); //set button enable
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                type = 'error';
+                msg = 'Error adding / update data';
+                showAlert(type, msg); //utk show alert
+                $('#btnSave').text('Simpan'); //change button text
+                $('#btnSave').attr('disabled', false); //set button enable
+            }
+        });
+
+    });
+</script>

@@ -15,25 +15,6 @@ class Katalog extends CI_Controller
     }
     public function index()
     {
-        // $ip    = $this->input->ip_address(); // Mendapatkan IP user
-        // $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
-        // $waktu = time(); //
-        // $timeinsert = date("Y-m-d H:i:s");
-
-        // // Cek berdasarkan IP, apakah user sudah pernah mengakses hari ini
-        // $s = $this->db->query("SELECT * FROM visitor WHERE ip='" . $ip . "' AND date='" . $date . "'")->num_rows();
-        // $ss = isset($s) ? ($s) : 0;
-
-
-        // // Kalau belum ada, simpan data user tersebut ke database
-        // if ($ss == 0) {
-        //     $this->db->query("INSERT INTO visitor(ip, date, hits, online, time) VALUES('" . $ip . "','" . $date . "','1','" . $waktu . "','" . $timeinsert . "')");
-        // }
-
-        // // Jika sudah ada, update
-        // else {
-        //     $this->db->query("UPDATE visitor SET hits=hits+1, online='" . $waktu . "' WHERE ip='" . $ip . "' AND date='" . $date . "'");
-        // }
 
 
         $data = [
@@ -48,7 +29,11 @@ class Katalog extends CI_Controller
             'email' => $this->profil->get_kontak('email'),
             'telpon' => $this->profil->get_kontak('telpon'),
             'foto' => $this->profil->get_profile('foto'),
-            'artikel' => $this->katalog->get_artikel()->result(),
+
+            'B_produk' => $this->profil->get_B_produk()->result(),
+            'produklimit' => $this->profil->produklimit()->result(),
+            'artikellimit' => $this->profil->art()->result(),
+
 
 
             'kategori' => $this->katalog->get_kategori()->result(),
@@ -70,7 +55,8 @@ class Katalog extends CI_Controller
             $produk = $this->katalog->get_dataproduk();
             $data = array();
             foreach ($produk as $row) {
-
+                $id = $row['produk_id'];
+                $visitorproduk = $this->db->query("SELECT * FROM section_visit WHERE produk_id=$id")->num_rows();
                 $list = ' <div class="col-md-4 mb-4">
                 <div class="card border-0 mb-2">
                     <img class="card-img-top" src="' . base_url() . 'assets/upload/gallery/' . $row['foto'] . '" alt="">
@@ -81,7 +67,7 @@ class Katalog extends CI_Controller
                         </div>
                        
                         <div class="d-flex">
-                            <small class="mr-3"><i class="fa fa-eye text-primary"></i> Admin</small>
+                            <small class="mr-3"><i class="fa fa-eye text-primary"></i> ' . $visitorproduk . '</small>
                             <small class="mr-3"><i class="fa fa-folder text-primary"></i> ' . $row['kategori'] . '</small>
                            
                         </div>
@@ -131,6 +117,31 @@ class Katalog extends CI_Controller
 
     public function detailproduk($slug, $id)
     {
+        $ip    = $this->input->ip_address(); // Mendapatkan IP user
+        $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
+        $waktu = time(); //
+        $timeinsert = date("Y-m-d H:i:s");
+        // Cek berdasarkan IP, apakah user sudah pernah mengakses hari ini
+        $s = $this->db->query("SELECT * FROM section_visit WHERE ip='" . $ip . "' AND produk_id='" . $id . "'")->num_rows();
+        $ss = isset($s) ? ($s) : 0;
+        // Kalau belum ada, simpan data user tersebut ke database
+        if ($ss == 0) {
+            $data = array(
+                'produk_id' => $id,
+                'ip' => $ip,
+                'hits' => 1,
+                'date' => $date,
+                'online' => $waktu,
+                'time' => $timeinsert,
+            );
+            $this->katalog->input_visit($data);
+        }
+
+        // Jika sudah ada, update
+        else {
+            $this->db->query("UPDATE section_visit SET hits=hits+1, online='" . $waktu . "' WHERE ip='" . $ip . "' AND date='" . $date . "'");
+        }
+        $lihat  = $this->db->query("SELECT * FROM section_visit WHERE produk_id='" . $id . "'")->num_rows(); // Hitung jumlah pengunjung
 
         $data = [
 
@@ -144,6 +155,10 @@ class Katalog extends CI_Controller
             'email' => $this->profil->get_kontak('email'),
             'telpon' => $this->profil->get_kontak('telpon'),
             'foto' => $this->profil->get_profile('foto'),
+
+            'B_produk' => $this->profil->get_B_produk()->result(),
+            'produklimit' => $this->profil->produklimit()->result(),
+            'artikellimit' => $this->profil->art()->result(),
 
             'detproduk' => $this->katalog->get_prod($slug)->result(),
             'lisfoto' => $this->katalog->get_foto($id)->result(),
