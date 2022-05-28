@@ -8,7 +8,7 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/backend/images/favicon.ico">
+    <link rel="icon"" href=" <?= base_url() ?>assets/upload/logo/<?= $logo ?>">
 
     <!-- App css -->
     <link href="<?= base_url() ?>assets/backend/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -25,9 +25,9 @@
                     <div class="card">
 
                         <!-- Logo -->
-                        <div class="card-header pt-4 pb-4 text-center bg-dark">
+                        <div class="card-header text-center bg-dark">
                             <a href="index.html">
-                                <span><img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="20"></span>
+                                <span><img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="50"></span>
                             </a>
                         </div>
 

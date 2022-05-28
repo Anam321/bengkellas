@@ -3,20 +3,20 @@
     <!-- LOGO -->
     <a href="<?= base_url('administrasi/dashboard/') ?>" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="50">
         </span>
         <span class="logo-sm">
-            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="20">
         </span>
     </a>
 
     <!-- LOGO -->
     <a href="<?= base_url('administrasi/dashboard/') ?>" class="logo text-center logo-dark">
         <span class="logo-lg">
-            <img src="<?= base_url() ?>assets/backend/images/logo-dark.png" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>"" alt="" height=" 50">
         </span>
         <span class="logo-sm">
-            <img src="<?= base_url() ?>assets/backend/images/logo_sm_dark.png" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>"" alt="" height=" 20">
         </span>
     </a>
 
