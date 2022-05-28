@@ -19,6 +19,7 @@ class Histori extends CI_Controller
             //title Page
             'perusahaan' => $this->profil->get_profile('nama'),
             'judul' => 'Histori | ' . $this->profil->get_profile('nama'),
+            'perusahaan' => $this->profil->get_profile('nama'),
             'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
 

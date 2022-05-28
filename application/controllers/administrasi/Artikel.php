@@ -20,7 +20,7 @@ class Artikel extends CI_Controller
             'judul' => 'Artikel | ' . $this->profil->get_profile('nama'),
             'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
-
+            'perusahaan' => $this->profil->get_profile('nama'),
         ];
 
         $this->load->view('themplates/header', $data);

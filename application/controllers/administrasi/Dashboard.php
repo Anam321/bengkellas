@@ -20,6 +20,7 @@ class Dashboard extends CI_Controller
 
             'judul' => 'Dashboard | ' . $this->profil->get_profile('nama'),
             'logo' =>  $this->profil->get_profile('logo'),
+            'perusahaan' => $this->profil->get_profile('nama'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
             'pengunjung' => $this->dashboard->get_pengunjung()->result(),
             'allpengunjung' => $this->dashboard->getJlhdata('visitor'),

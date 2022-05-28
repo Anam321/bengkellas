@@ -19,6 +19,7 @@ class Tender extends CI_Controller
             //title Page
             'judul' => 'Tender | ' . $this->profil->get_profile('nama'),
             'logo' =>  $this->profil->get_profile('logo'),
+            'perusahaan' => $this->profil->get_profile('nama'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
             'kategori' => $this->tender->get_kategori()->result(),
         ];
