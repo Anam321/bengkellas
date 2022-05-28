@@ -18,7 +18,7 @@ class Artikel extends CI_Controller
         $data = [
             //title Page
             'judul' => 'Artikel | ' . $this->profil->get_profile('nama'),
-            // 'nama' => $this->profil->get_profile('nama'),
+            'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
 
         ];

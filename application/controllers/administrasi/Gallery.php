@@ -18,7 +18,7 @@ class Gallery extends CI_Controller
         $data = [
             //title Page
             'judul' => 'Gallery | ' . $this->profil->get_profile('nama'),
-            // 'nama' => $this->profil->get_profile('nama'),
+            'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
 
         ];

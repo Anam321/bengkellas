@@ -17,8 +17,9 @@ class Histori extends CI_Controller
     {
         $data = [
             //title Page
-            'perusahaan' => $this->profil->get_profile('nama_perusahaan'),
-            'judul' => 'Histori | ' . $this->profil->get_profile('nama_perusahaan'),
+            'perusahaan' => $this->profil->get_profile('nama'),
+            'judul' => 'Histori | ' . $this->profil->get_profile('nama'),
+            'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
 
         ];

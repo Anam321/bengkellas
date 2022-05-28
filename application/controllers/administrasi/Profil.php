@@ -17,7 +17,7 @@ class Profil extends CI_Controller
         $data = [
             //title Page
             'judul' => 'Profil | ' . $this->profil->get_profile('nama'),
-            // 'nama' => $this->profil->get_profile('nama'),
+            'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
 
         ];

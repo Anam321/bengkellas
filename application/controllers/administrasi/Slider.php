@@ -19,6 +19,7 @@ class Slider extends CI_Controller
             //title Page
             'judul' => 'Slider | ' . $this->profil->get_profile('nama'),
             'perusahaan' => $this->profil->get_profile('nama'),
+            'logo' =>  $this->profil->get_profile('logo'),
             'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array()
 
         ];
