@@ -7,7 +7,7 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $this->load->model('admin/profil_m', 'profil');
+        $this->load->model('admin/profil_m', 'profil');
 
 
         $this->load->library('session');
@@ -19,10 +19,13 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('pass', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Login';
-            // $data['logo'] = $this->profil->get_profile('logo');
+            $data = [
+                //title Page
+                'judul' => 'Login | ' . $this->profil->get_profile('nama'),
+                'logo' =>  $this->profil->get_profile('logo'),
+                'perusahaan' => $this->profil->get_profile('nama'),
 
-            // $this->load->view('themplates/header.php', $data);
+            ];
             $this->load->view('admin/auth_v.php', $data);
             // $this->load->view('themplates/footer.php', $data);
         } else {
