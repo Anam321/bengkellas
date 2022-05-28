@@ -131,7 +131,20 @@ class Tender extends CI_Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $idTender = $id;
             $data = array(
-                'status' => 1,
+                'is_time' => 1,
+                'status' => 0,
+            );
+            $update = $this->tender->done($idTender, $data);
+            echo json_encode($update);
+        }
+    }
+    public function arsip($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $idTender = $id;
+            $data = array(
+                'status' => 0,
+                'is_time' => 0,
             );
             $update = $this->tender->done($idTender, $data);
             echo json_encode($update);
@@ -145,7 +158,23 @@ class Tender extends CI_Controller
         }
     }
 
+    public function tenderclear()
+    {
+        $data = [
+            //title Page
+            'judul' => 'Tender | ' . $this->profil->get_profile('nama'),
+            // 'nama' => $this->profil->get_profile('nama'),
+            'user' => $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array(),
 
+        ];
+
+        $this->load->view('themplates/header', $data);
+        $this->load->view('themplates/sidebar', $data);
+        $this->load->view('themplates/navbar', $data);
+        $this->load->view('admin/cleartender_v', $data);
+        $this->load->view('js/tender_js', $data);
+        $this->load->view('themplates/footer', $data);
+    }
 
     public function old_tender()
     {
@@ -187,6 +216,46 @@ class Tender extends CI_Controller
             $tbody[] = $row['tgl_akhir'];
             $tbody[] = $row['harga'];
             $tbody[] = $row['alamat'];
+
+            $data[] = $tbody;
+        }
+        if ($tender) {
+            echo json_encode(array('data' => $data));
+        } else {
+            echo json_encode(array('data' => 0));
+        }
+    }
+
+    public function datatablesclear()
+    {
+        $tender = $this->tender->get_dataclear();
+        $no = 1;
+        foreach ($tender as $row) {
+
+            $tbody = array();
+            $tbody[] = $no++;
+            $tbody[] = $row['nama_tender'];
+            $tbody[] = $row['jenis'];
+            $tbody[] = $row['pembuatan'];
+            if ($row['volume'] == '') {
+                $volum = 0;
+            } else {
+                $volum = '' . $row['volume'] . 'm';
+            }
+
+            $tbody[] = $volum;
+            $tbody[] = $row['tgl_mulai'];
+            $tbody[] = $row['tgl_akhir'];
+            $tbody[] = $row['harga'];
+            $tbody[] = $row['alamat'];
+
+            $action = '
+                   <div class="table-action">
+                  
+                      <a href="javascript:void(0);" onclick="arsip(' . $row['projek_id'] . ')" class="btn btn-info btn-sm mb-2"><i class="mdi mdi-folder-multiple-plus me-2"></i>Arsipkan</a>
+                    </div>
+';
+            $tbody[] = $action;
 
             $data[] = $tbody;
         }

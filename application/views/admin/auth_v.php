@@ -70,25 +70,25 @@
                             </div>
 
                             <?php echo form_close(); ?>
-                        </div> <!-- end card-body -->
+                        </div>
                     </div>
-                    <!-- end card -->
 
+                    <!-- 
                     <div class="row mt-3">
                         <div class="col-12 text-center">
                             <p class="text-muted">Don't have an account? <a href="<?= base_url() ?>administrasi/auth/regist" class="text-muted ms-1"><b>Sign
                                         Up</b></a></p>
-                        </div> <!-- end col -->
-                    </div>
-                    <!-- end row -->
+                        </div> 
+                    </div> -->
 
-                </div> <!-- end col -->
+
+                </div>
             </div>
-            <!-- end row -->
+
         </div>
-        <!-- end container -->
+
     </div>
-    <!-- end page -->
+
 
     <footer class="footer footer-alt">
         2018 - 2021 © Hyper - Coderthemes.com

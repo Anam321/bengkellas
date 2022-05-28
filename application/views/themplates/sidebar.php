@@ -3,10 +3,10 @@
     <!-- LOGO -->
     <a href="<?= base_url('administrasi/dashboard/') ?>" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="<?= base_url() ?>assets/backend/images/logo.png" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="<?= base_url() ?>assets/backend/images/logo_sm.png" alt="" height="16">
+            <img src="<?= base_url() ?>assets/upload/logo/<?= $logo ?>" alt="" height="16">
         </span>
     </a>
 
@@ -89,6 +89,25 @@
                         <li>
                             <a href="<?= base_url('administrasi/slider/') ?>">Slider</a>
                         </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#setting" aria-expanded="false" aria-controls="setting" class="side-nav-link">
+                    <i class="mdi dripicons-gear noti-icon"></i>
+                    <span> Setting </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="setting">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="javascript: void(0);">Map</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">Akun</a>
+                        </li>
+
 
                     </ul>
                 </div>

@@ -308,4 +308,52 @@
             });
         }
     }
+
+
+
+    function activ(id) {
+        if (confirm('Apakah Anda yakin menampilkan data ini ?')) {
+            // ajax delete data to database
+            $.ajax({
+                url: "<?php echo site_url('administrasi/katalog/active/') ?>" + id,
+                type: "POST",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.status == '00') {
+                        showAlert(data.type, data.mess);
+                        reload_table();
+                    } else {
+                        showAlert(data.type, data.mess);
+                        reload_table();
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error data switch');
+                }
+            });
+        }
+    }
+
+    function no_activ(id) {
+        if (confirm('Apakah Anda yakin nonactifkan data ini ?')) {
+            // ajax delete data to database
+            $.ajax({
+                url: "<?php echo site_url('administrasi/katalog/not_active/') ?>" + id,
+                type: "POST",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.status == '00') {
+                        showAlert(data.type, data.mess);
+                        reload_table();
+                    } else {
+                        showAlert(data.type, data.mess);
+                        reload_table();
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error data switch');
+                }
+            });
+        }
+    }
 </script>

@@ -63,24 +63,24 @@
                          </span>
                      </a>
                      <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                         <!-- item-->
-                         <div class=" dropdown-header noti-title">
+
+                         <!-- <div class=" dropdown-header noti-title">
                              <h6 class="text-overflow m-0">Welcome !</h6>
                          </div>
 
-                         <!-- item-->
+                         
                          <a href="javascript:void(0);" class="dropdown-item notify-item">
                              <i class="mdi mdi-account-circle me-1"></i>
                              <span>My Account</span>
                          </a>
 
-                         <!-- item-->
+                         
                          <a href="javascript:void(0);" class="dropdown-item notify-item">
                              <i class="mdi mdi-account-edit me-1"></i>
                              <span>Settings</span>
-                         </a>
+                         </a> -->
 
-                         <a href="javascript:void(0);" class="dropdown-item notify-item">
+                         <a href="<?= base_url(); ?>administrasi/auth/logout" class="dropdown-item notify-item">
                              <i class="mdi mdi-logout me-1"></i>
                              <span>Logout</span>
                          </a>

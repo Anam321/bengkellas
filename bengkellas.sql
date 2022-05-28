@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 28/05/2022 02:53:40
+ Date: 28/05/2022 13:22:38
 */
 
 SET NAMES utf8mb4;
@@ -225,14 +225,15 @@ CREATE TABLE `tender`  (
   `harga` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `volume` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `status` int(11) NULL DEFAULT NULL,
+  `is_time` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`projek_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tender
 -- ----------------------------
-INSERT INTO `tender` VALUES (3, 'drgdfgfg', 'Pagar', '2022-05-23', 'grsgsfgf', '2022-05-23', '2022-06-24', 'thfghdfghfgh', '1.000.000,00', '34', 1);
-INSERT INTO `tender` VALUES (4, 'Pembuatan Kanopi', 'Canopy', '2022-05-23', 'Pembuatan', '2022-05-25', '2022-06-11', 'jl.merdeka jakarta tangerang.', '1.500.000,00', '130', 0);
+INSERT INTO `tender` VALUES (3, 'drgdfgfg', 'Pagar', '2022-05-23', 'grsgsfgf', '2022-05-23', '2022-06-24', 'thfghdfghfgh', '1.000.000,00', '34', 0, 1);
+INSERT INTO `tender` VALUES (4, 'Pembuatan Kanopi', 'Canopy', '2022-05-23', 'Pembuatan', '2022-05-25', '2022-06-11', 'jl.merdeka jakarta tangerang.', '1.500.000,00', '130', 1, 0);
 
 -- ----------------------------
 -- Table structure for testimoni
@@ -276,6 +277,22 @@ INSERT INTO `tweb_kategori` VALUES (3, 'Tralis');
 INSERT INTO `tweb_kategori` VALUES (4, 'Tangga');
 
 -- ----------------------------
+-- Table structure for tweb_map
+-- ----------------------------
+DROP TABLE IF EXISTS `tweb_map`;
+CREATE TABLE `tweb_map`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `codemap` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `routs` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tweb_map
+-- ----------------------------
+INSERT INTO `tweb_map` VALUES (1, '', 'gzfg');
+
+-- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
@@ -308,12 +325,13 @@ CREATE TABLE `visitor`  (
   `online` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 686 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 687 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of visitor
 -- ----------------------------
-INSERT INTO `visitor` VALUES (685, '::1', 20, '2022-05-27', '1653681117', '2022-05-27 18:06:06');
+INSERT INTO `visitor` VALUES (685, '::1', 24, '2022-05-27', '1653690811', '2022-05-27 18:06:06');
+INSERT INTO `visitor` VALUES (686, '::1', 2, '2022-05-28', '1653718805', '2022-05-28 06:19:30');
 
 -- ----------------------------
 -- Table structure for whatsapptracking

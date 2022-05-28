@@ -43,7 +43,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
+                    <a href="<?= base_url() ?>" class="nav-item nav-link ">Home</a>
                     <a href="<?= base_url('about') ?>" class="nav-item nav-link">About</a>
                     <a href="<?= base_url('katalog') ?>" class="nav-item nav-link">Katalog</a>
                     <a href="<?= base_url('gallery') ?>" class="nav-item nav-link">Gallery</a>

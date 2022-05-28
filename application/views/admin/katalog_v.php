@@ -41,6 +41,7 @@
                                     <th>Category</th>
                                     <th>Added Date</th>
                                     <th>Price (meter)</th>
+                                    <th>Utama</th>
                                     <th style="width: 85px;">Action</th>
                                 </tr>
                             </thead>

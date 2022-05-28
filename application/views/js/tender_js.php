@@ -1,6 +1,7 @@
 <script type="text/javascript">
     var table; // for table
     var tables; // for table
+    var tablesc; // for table
     var foor; // for table
     var save_method; // untuk metode save data varible global
 
@@ -11,6 +12,10 @@
 
     function reload_table() {
         table.ajax.reload(null, false); //reload datatable ajax
+    }
+
+    function reload_tablesc() {
+        tablesc.ajax.reload(null, false); //reload datatable ajax
     }
 
     function reload_tables() {
@@ -59,6 +64,31 @@
 
     $(document).ready(function() {
 
+        tablesc = $("#cleartender").DataTable({
+
+            "ajax": "<?= base_url("administrasi/tender/datatablesclear/") ?>",
+
+            // select: {
+            //     style: "multi"
+            // },
+            language: {
+                paginate: {
+                    previous: "<i class='mdi mdi-chevron-left'>",
+                    next: "<i class='mdi mdi-chevron-right'>",
+                },
+                info: "Showing products _START_ to _END_ of _TOTAL_",
+                lengthMenu: 'Display <select class=\'form-select form-select-sm ms-1 me-1\'><option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> products',
+            },
+            pageLength: 5,
+
+            drawCallback: function() {
+                $(".dataTables_paginate > .pagination").addClass("pagination-rounded");
+            },
+        });
+
+    });
+    $(document).ready(function() {
+
         tables = $("#datatableold").DataTable({
 
             "ajax": "<?= base_url("administrasi/tender/datatables/") ?>",
@@ -88,6 +118,11 @@
         $('#form')[0].reset();
         $('#modaltender').modal('show');
         $('.modal-title').text('Tambah Tender');
+    }
+
+    function cleartender() {
+        window.location.href = "<?php echo site_url('administrasi/tender/tenderclear/') ?>";
+
     }
 
     function tenderusai() {
@@ -179,6 +214,29 @@
         });
     }
 
+    function arsip(id) {
+        if (confirm('Arsipkan Data Ini ?')) {
+            // ajax delete data to database
+            $.ajax({
+                url: "<?php echo site_url('administrasi/tender/arsip/') ?>" + id,
+                type: "POST",
+                dataType: "JSON",
+                success: function(data) {
+                    if (data.status == '00') {
+                        showAlert(data.type, data.mess);
+                        reload_tablesc();
+                    } else {
+                        showAlert(data.type, data.mess);
+
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error ubah data');
+                }
+            });
+        }
+    }
+
     function done(id) {
         if (confirm('Apakah Anda yakin ini sudah selesai ?')) {
             // ajax delete data to database
@@ -196,7 +254,7 @@
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Error deleting data');
+                    alert('Error ubah data');
                 }
             });
         }

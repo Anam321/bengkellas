@@ -22,6 +22,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-4">
                             <a href="javascript:void(0);" onclick="addtender()" class="btn btn-danger btn-sm mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Project</a>
+                            <a href="javascript:void(0);" onclick="cleartender()" class="btn btn-info btn-sm mb-2"><i class="mdi mdi-folder-multiple-plus me-2"></i>Tender Finish</a>
                             <a href="javascript:void(0);" onclick="tenderusai()" class="btn btn-info btn-sm mb-2"><i class="mdi mdi-folder-multiple-plus me-2"></i>Data Tender</a>
                         </div>
                         <div class="col-sm-8">

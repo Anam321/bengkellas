@@ -174,4 +174,21 @@ class Katalog_m extends CI_Model
         }
         return json_encode($res);
     }
+
+
+    public function switch($id, $data)
+    {
+        $this->db->where('produk_id', $id);
+        $r = $this->db->update('ref_produk', $data);
+        if ($r) {
+            $res['status'] = '00';
+            $res['type'] = 'success';
+            $res['mess'] = 'Data Berhasil Update';
+        } else {
+            $res['status'] = '01';
+            $res['type'] = 'warning';
+            $res['mess'] = 'Gagal Update Data';
+        }
+        return $res;
+    }
 }

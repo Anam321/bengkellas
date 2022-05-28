@@ -16,7 +16,17 @@ class Tender_m extends CI_Model
 
         $this->db->select("*");
         $this->db->from('tender');
-        $this->db->where('status', 0);
+        $this->db->where('status', 1);
+
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function get_dataclear()
+    {
+
+        $this->db->select("*");
+        $this->db->from('tender');
+        $this->db->where('is_time', 1);
 
         $query = $this->db->get();
         return $query->result_array();
@@ -26,7 +36,7 @@ class Tender_m extends CI_Model
 
         $this->db->select("*");
         $this->db->from('tender');
-        $this->db->where('status', 1);
+        $this->db->where('status', 0);
 
         $query = $this->db->get();
         return $query->result_array();

@@ -66,17 +66,14 @@ class Katalog extends CI_Controller
     {
         $produkrow = $this->katalog->get_produk();
         foreach ($produkrow as $row) {
-
+            $id = $row['produk_id'];
+            $visitorproduk = $this->db->query("SELECT * FROM section_visit WHERE produk_id=$id")->num_rows();
             $tbody = array();
             $gambar = '  <img src="' . base_url() . 'assets/upload/gallery/' . $row['foto'] . '" alt="contact-img" title="contact-img" class="rounded me-3" height="48">
                                             <p class="m-0 d-inline-block align-middle font-16">
                                                 <a href="apps-ecommerce-products-details.html" class="text-body">' . $row['nama_produk'] . '</a>
                                                 <br>
-                                                <span class=" mdi mdi-star"></span>
-                                                <span class=" mdi mdi-star"></span>
-                                                <span class=" mdi mdi-star"></span>
-                                                <span class=" mdi mdi-star"></span>
-                                                <span class=" mdi mdi-star"></span>
+                                                ' . $visitorproduk . ' Dilihat
                                             </p>';
             $tbody[] = $gambar;
 
@@ -90,6 +87,14 @@ class Katalog extends CI_Controller
 
             $tbody[] = $ha;
 
+            if ($row['best'] == 1) {
+                $switch = '<button type="button" class="btn btn-success btn-sm">ON</button><button onclick="no_activ(' . $row['produk_id'] . ')" type="button" class="btn btn-dark  btn-sm">OF</button>';
+            } else {
+                $switch = '<button type="button" onclick="activ(' . $row['produk_id'] . ')" class="btn btn-dark btn-sm">ON</button><button type="button" class="btn btn-danger btn-sm">OF</button>';
+            }
+
+
+            $tbody[] =  $switch;
             $action = '
                    <div class="table-action">
                    
@@ -357,5 +362,30 @@ class Katalog extends CI_Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $this->katalog->delete_foto_id($id);
         }
+    }
+
+
+
+    public function active($id)
+    {
+        $id_testi = $id;
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = array(
+                'best' => 1,
+            );
+        }
+        $update = $this->katalog->switch($id_testi, $data);
+        echo json_encode($update);
+    }
+    public function not_active($id)
+    {
+        $id_testi = $id;
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = array(
+                'best' => 0,
+            );
+        }
+        $update = $this->katalog->switch($id_testi, $data);
+        echo json_encode($update);
     }
 }
