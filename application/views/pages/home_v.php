@@ -28,7 +28,41 @@ function waktu_lalu($timestamp)
 }
 ?>
 <!-- Carousel Start -->
+<style>
+    @media screen and (max-width: 500px) {
+        /* .col-sm-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        } */
 
+        .col-lg-3 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        }
+
+        .col-lg-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        }
+
+        /* .col-md-6 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        } */
+
+        .col-md-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        }
+
+
+    }
+</style>
 
 <div class="container-fluid p-0">
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
@@ -352,7 +386,7 @@ function waktu_lalu($timestamp)
                 ?>
                 <?php $id = $blog->artikel_id;
                 $visitartik = $this->db->query("SELECT * FROM section_visit WHERE artikel_id='" . $id . "'")->num_rows(); ?>
-                <div class="col-md-4 mb-4">
+                <div class="col-sm-4 mb-4">
                     <div class="card border-0 mb-2">
                         <img class="card-img-top" src="<?= base_url() ?>assets/upload/artikel/<?= $blog->foto ?>" alt="">
                         <div class="card-body bg-white p-4">

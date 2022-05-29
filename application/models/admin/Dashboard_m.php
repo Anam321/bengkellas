@@ -42,7 +42,7 @@ class Dashboard_m extends CI_Model
     public function get_panggilan()
     {
         $this->db->select('*');
-        $this->db->from('Whatsapptracking');
+        $this->db->from('whatsapptracking');
         $query = $this->db->get();
         return $query;
     }

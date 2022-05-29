@@ -1,14 +1,4 @@
-  <!-- Apex js -->
-  <script src="<?= base_url() ?>assets/backend/js/vendor/apexcharts.min.js"></script>
-
-  <!-- Todo js -->
-  <script src="<?= base_url() ?>assets/backend/js/ui/component.todo.js"></script>
-
-  <!-- demo app -->
-  <script src="<?= base_url() ?>assets/backend/js/pages/demo.dashboard-crm.js"></script>
-
-
-  <!-- <script type="text/javascript">
+<!-- <script type="text/javascript">
 var save_method; //for save method string
 var table;
 

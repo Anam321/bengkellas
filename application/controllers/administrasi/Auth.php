@@ -119,20 +119,6 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('pass');
-
-        // $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">
-        // 									<div class="alert-icon">
-        // 										<i class="far fa-fw fa-bell"></i>
-        // 									</div>
-        // 									<div class="alert-message">
-        // 										<strong>Success!</strong> Kamu Berhasil Di Logout. See You!
-        // 									</div>
-
-        // 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        // 										<span aria-hidden="true">&times;</span>
-        // 									</button>
-        // 								</div>');
-
         redirect('administrasi/auth');
     }
 }

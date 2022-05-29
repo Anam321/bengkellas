@@ -27,7 +27,41 @@ function waktu_lalu($timestamp)
     return $waktu;
 }
 ?>
+<style>
+    @media screen and (max-width: 500px) {
+        /* .col-sm-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        } */
 
+        .col-lg-3 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        }
+
+        /* .col-lg-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        } */
+
+        /* .col-md-6 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        } */
+
+        .col-md-4 {
+            width: 50%;
+            padding: 6px;
+            margin: auto;
+        }
+
+
+    }
+</style>
 
 <!-- Page Header Start -->
 <div class="container-fluid bg-secondary py-5">

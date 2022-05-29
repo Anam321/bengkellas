@@ -46,7 +46,7 @@
 
         <?php $date = date("Y-m-d");
         foreach ($panggilan as $col) : ?>
-            <?php $jmlHariini = $this->db->query("SELECT * FROM Whatsapptracking WHERE date='" . $date . "'")->num_rows(); ?>
+            <?php $jmlHariini = $this->db->query("SELECT * FROM whatsapptracking WHERE date='" . $date . "'")->num_rows(); ?>
         <?php endforeach ?>
         <div class="col-xxl-3 col-lg-6">
             <div class="card widget-flat bg-primary text-white">

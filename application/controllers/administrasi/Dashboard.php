@@ -28,7 +28,7 @@ class Dashboard extends CI_Controller
             'jmlprojek' => $this->dashboard->getJlhdatames('tender', 'status', 1),
             'projekselesai' => $this->dashboard->getJlhdatames('tender', 'is_time', 1),
             'panggilan' => $this->dashboard->get_panggilan()->result(),
-            'totalmenghubungi' => $this->dashboard->getJlhdata('Whatsapptracking'),
+            'totalmenghubungi' => $this->dashboard->getJlhdata('whatsapptracking'),
 
         ];
         $this->load->view('themplates/header.php', $data);
