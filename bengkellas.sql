@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50733
  Source Host           : localhost:3306
- Source Schema         : rafiutam
+ Source Schema         : bengkellas
 
  Target Server Type    : MySQL
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 30/05/2022 00:51:14
+ Date: 30/05/2022 17:16:02
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `artikel`  (
   `visit` int(11) NULL DEFAULT NULL,
   `ip` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`artikel_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of artikel
@@ -54,27 +54,15 @@ CREATE TABLE `gallery`  (
   `produk_id` int(11) NULL DEFAULT NULL,
   `token` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`gallery_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of gallery
 -- ----------------------------
-INSERT INTO `gallery` VALUES (40, NULL, '1628125063.jpg', NULL, NULL, 11, '2');
 INSERT INTO `gallery` VALUES (41, NULL, '1628125077.jpg', NULL, NULL, 0, '2');
 INSERT INTO `gallery` VALUES (42, NULL, '1628125116.jpg', NULL, NULL, 0, '2');
 INSERT INTO `gallery` VALUES (44, NULL, '1628125160.jpg', NULL, NULL, 0, '2');
 INSERT INTO `gallery` VALUES (45, NULL, '1628125174.jpg', NULL, NULL, 0, '2');
-INSERT INTO `gallery` VALUES (46, NULL, '1624515881_(1).jpg', NULL, NULL, 12, '2');
-INSERT INTO `gallery` VALUES (47, NULL, '1624515912.jpg', NULL, NULL, 12, '2');
-INSERT INTO `gallery` VALUES (48, NULL, '1624516008.jpg', NULL, NULL, 12, '2');
-INSERT INTO `gallery` VALUES (49, NULL, '1628125077.jpg', NULL, NULL, 11, '2');
-INSERT INTO `gallery` VALUES (50, NULL, '1628125116.jpg', NULL, NULL, 11, '2');
-INSERT INTO `gallery` VALUES (51, NULL, '1628125174.jpg', NULL, NULL, 11, '2');
-INSERT INTO `gallery` VALUES (52, NULL, '1628125127.jpg', NULL, NULL, 11, '2');
-INSERT INTO `gallery` VALUES (53, NULL, '1624936228.jpg', NULL, NULL, 13, '2');
-INSERT INTO `gallery` VALUES (54, NULL, '1624936264.jpg', NULL, NULL, 13, '2');
-INSERT INTO `gallery` VALUES (55, NULL, '1624936285.jpg', NULL, NULL, 13, '2');
-INSERT INTO `gallery` VALUES (56, NULL, '1624936366.jpg', NULL, NULL, 14, '2');
 INSERT INTO `gallery` VALUES (57, 'k1', 'k1-1653844944.jpeg', '2022-05-29', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (58, 'k2', 'k2-1653844956.jpeg', '2022-05-29', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (59, 'k3', 'k3-1653844966.jpeg', '2022-05-29', NULL, NULL, '1');
@@ -83,7 +71,6 @@ INSERT INTO `gallery` VALUES (61, 'k5', 'k5-1653844998.jpeg', '2022-05-29', NULL
 INSERT INTO `gallery` VALUES (62, 'k6', 'k6-1653845014.jpeg', '2022-05-29', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (63, 'k7', 'k7-1653845027.jpeg', '2022-05-29', NULL, NULL, '1');
 INSERT INTO `gallery` VALUES (64, 'k8', 'k8-1653845039.jpeg', '2022-05-29', NULL, NULL, '1');
-INSERT INTO `gallery` VALUES (65, NULL, '13.jpeg', NULL, NULL, 15, '2');
 
 -- ----------------------------
 -- Table structure for message
@@ -100,7 +87,7 @@ CREATE TABLE `message`  (
   `trash` int(11) NULL DEFAULT NULL,
   `foto` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_cont`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of message
@@ -128,16 +115,14 @@ CREATE TABLE `ref_produk`  (
   `harga` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `best` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`produk_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of ref_produk
 -- ----------------------------
-INSERT INTO `ref_produk` VALUES (11, 'Kreasi Alumunium', 'Tralis', '<p style=\"padding: 0px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Mengingat pemasangan kusen aluminium harus jeli dan teliti, maka sangat penting untuk memilih&nbsp;<span style=\"font-weight: bolder;\">jasa pembuatan dan pemasangan kusen aluminium</span>&nbsp;yang memberikan pelayanan terbaik. Hal ini dikarenakan tidak sembarangan orang bisa melakukan pemasangan kusen baik pintu maupun jendela khususnya yang berbahan logam aluminium.</p><p style=\"padding: 0px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Jasa pemasangan kusen aluminium dari&nbsp;rafiutama.com&nbsp;bisa menjadi pilihan terbaik untuk Anda karena perusahaan ini memberikan jaminan pemasangan dengan garansi hingga 1 tahun. Konsultasi untuk pemilihan material terbaik dan prosedur pemasangan sangat diperlukan untuk estimasi budget yang harus dikeluarkan. Anda bisa mendapatkannya secara gratis dan cuma-Cuma di&nbsp;rafiutama.</p><p style=\"padding: 0px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Anda bisa mendapatkan&nbsp;<span style=\"font-weight: bolder;\">produk kusen aluminium</span>&nbsp;terbaik dengan kisaran harga <b>Rp90.000,00</b> hingga Rp220.000,00 per meternya tergantung model, ukuran, dan warna. Kusen aluminium dengan warna&nbsp;<i>coating</i>&nbsp;dan serat motif dijual dengan harga yang lebih mahal dibandingkan warna-warna polos.&nbsp;rafiutama&nbsp;akan memberikan kualitas pelayanan terbaik dengan tenaga ahli dan profesional di bidangnya.</p><p style=\"padding: 0px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; text-align: justify;\">rafiutama&nbsp;memberikan layanan pemasangan&nbsp;<span style=\"font-weight: bolder;\">kusen aluminium</span>&nbsp;secara&nbsp;<i>online</i>&nbsp;maupun&nbsp;<i>offline</i>&nbsp;untuk seluruh wilayah Jabodetabek melalui website resmi dan nomor telepon. Produk yang tersedia di rafiutama.com terdiri dari kusen pintu, kusen jendela, dan kusen partisi aluminium dengan harga sangat terjangkau.</p><p style=\"padding: 0px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px; text-align: justify;\"><br></p><ul style=\"padding: 0px; list-style: none; font-size: 15px; color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif;\"><li><span style=\"font-weight: bolder;\">Bahan</span>: Ukuran 3 \'\' dan 4 \'\', Warna Silver, Coklat, Hitam putih susu dll.</li></ul>', 'kreasi-alumunium-1653839178.jpg', '2022-05-29 15:46:18', 'kreasi-alumunium', '0', NULL);
-INSERT INTO `ref_produk` VALUES (12, 'jendela', 'Tralis', 'Jendela tralis yang memakai holo galpanis murah namun kokoh, inpormasi lebih lanjut siahkan hubungi kami dengan kli icon wa disamping', 'jendela-1653839569.jpg', '2022-05-29 15:52:49', 'jendela', '0', NULL);
-INSERT INTO `ref_produk` VALUES (13, 'Pagar tangga 1', 'Pagar', '<p>Informasi bahan : produk ini memakai bahan besi holo.<span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">informasi lebih lanjut tentanng produk ini silahkan hubungi kami di contact atau, klik icon whatsapp di pinggir kiri layar</span></p>', 'pagar-tangga-1-1653839977.jpg', '2022-05-29 15:59:37', 'pagar-tangga-1', '0', NULL);
-INSERT INTO `ref_produk` VALUES (14, 'Pagar Jaring', 'Pagar', '<span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">informasi lebih lanjut untuk produk ini silahkan hubungi kami di contact, atau klik icon whatsapp di pinggir kiri layar.</span>', 'pagar-jaring-1653842460.jpg', '2022-05-29 16:41:00', 'pagar-jaring', '0', NULL);
-INSERT INTO `ref_produk` VALUES (15, 'Tangga Rebah', 'Tangga', '<span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">informasi lebih lanjut untuk produk ini silahkan hubungi kami di contact, atau klik icon whatsapp di pinggir kiri layar.</span>', 'tangga-rebah-1653842729.jpg', '2022-05-29 16:45:29', 'tangga-rebah', '0', NULL);
+INSERT INTO `ref_produk` VALUES (16, 'Pagar Tralis', 'Pagar', 'informasi lebih lanjut Kelik icon wa di samping. dan dapat kan penwaran terbaik harga produk.', 'pagar-tralis-1653904272.jpeg', '2022-05-30 09:51:12', 'pagar-tralis', '0', NULL);
+INSERT INTO `ref_produk` VALUES (17, 'Pagar Tralis 34422', 'Pagar', 'Informasi pemesanan dan produk lebih lanjut silahkan hubungi kami dengan klik icon wa di samping, dan dapatkan penawaran haraga dan produk kami.', 'pagar-tralis-34422-1653904393.jpeg', '2022-05-30 09:53:13', 'pagar-tralis-34422', '0', NULL);
+INSERT INTO `ref_produk` VALUES (18, 'Canopy atap alderon', 'Canopy', 'silahkan hubungi kami dengan klik icon wa di samping untuk mendapatkan penwaran terbaik harga dan produk', 'canopy-atap-alderon-1653904511.jpeg', '2022-05-30 09:55:11', 'canopy-atap-alderon', '0', NULL);
 
 -- ----------------------------
 -- Table structure for section_visit
@@ -153,7 +138,7 @@ CREATE TABLE `section_visit`  (
   `artikel_id` int(11) NOT NULL,
   `produk_id` int(11) NOT NULL,
   PRIMARY KEY (`id_secvist`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of section_visit
@@ -177,12 +162,12 @@ CREATE TABLE `set_hero`  (
   `link` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `class` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`hero_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of set_hero
 -- ----------------------------
-INSERT INTO `set_hero` VALUES (3, 'Selamat Datang Di WEb Rafiutama', 'Nikmati kemudahan dalam bertransaksi, dan dapatkan hasil produk yang berkualitas. Apa yang anda impikan kami akan mewujudkan nya. kepuasan pelanggan adalah kepuasan kami.', 'selamat-datang-1653827199.jpeg', 1, 'javascript: void(0);', 'active');
+INSERT INTO `set_hero` VALUES (3, 'Selamat Datang Di WEb ', 'Nikmati kemudahan dalam bertransaksi, dan dapatkan hasil produk yang berkualitas. Apa yang anda impikan kami akan mewujudkan nya. kepuasan pelanggan adalah kepuasan kami.', 'selamat-datang-1653827199.jpeg', 1, 'javascript: void(0);', 'active');
 INSERT INTO `set_hero` VALUES (4, 'Untuk Kualitas Dan Hasil Yang Unggul', 'Dapatkan hasil yang berkualitas dan unggul di sini', 'untuk-kualitas-dan-hasil-yang-unggul-1653838964.jpeg', 1, 'javascript: void(0);', NULL);
 
 -- ----------------------------
@@ -198,12 +183,12 @@ CREATE TABLE `set_kontak`  (
   `whatsap` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `github` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`kontak_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of set_kontak
 -- ----------------------------
-INSERT INTO `set_kontak` VALUES (1, '82124899677', 'piansah006@gmail.com', 'https://facebook.com/', 'intagram.com', '82124899677', NULL);
+INSERT INTO `set_kontak` VALUES (1, '8212489', 'example@gmail.com', 'https://facebook.com/', 'intagram.com', '8212489', NULL);
 
 -- ----------------------------
 -- Table structure for set_profil
@@ -220,12 +205,12 @@ CREATE TABLE `set_profil`  (
   `company_name` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `web_url` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
   PRIMARY KEY (`profil_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of set_profil
 -- ----------------------------
-INSERT INTO `set_profil` VALUES (1, 'Bengkel Las Rafiutama', 'jl. Sarua Bulak Rt 02 / 03. Kel. Pondok Petir Kec. Bojongsari Depok', '<p><span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Puji syukur kami panjatkan kepada Tuhan yang maha esa , atas segala rahmat dan keridoan nya, sehingga kita masih di beri kesehatan dan kelncaran dalam menjalan kan aktifitas se hari-hari.</span><br style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\"><br style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\"><span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Rafi utama berdiri sejak 18 oktober 2009. Saat ini Rafi utama di kelola oleh dewan direksi yang telah berpengalaman dalam bidang konstruksi las dan gorden.</span><br style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\"><br style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\"><span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Dengan semakin berkembang dan tinggi nya ke butuhan masyarakat terhadap pelayanan yang berhubungan dengan kebutuhan jasa konstruksi las dan gorden. Kami berinisiatif untuk membuka perushaan dengan konsep kelas menengah untuk memberikan penglaman order terbaik kepada para pelanggan. Jangan takut untuk memilih kami, dan mempercaya kan projek anda pada kami. kami untuk sekarang bergerak dalam bidang konstruksi las dan gorden.</span></p><p><br></p><h2>Visi</h2><p><span style=\"color: rgb(68, 68, 68); font-family: &quot;Open Sans&quot;, sans-serif; font-size: 16px;\">Menjadi jasa konstruksi terkemuka dalam berbagai bidang, yang mampu memberikan kepuasan kepada pelanggan melalui, pelayanan dan service yang berkualitas, inspiratif dan inovatif.</span></p><h2>Misi</h2><ol><li><font color=\"#444444\" face=\"Open Sans, sans-serif\"><span style=\"font-size: 16px;\">Memenuhi kebutuhan pelanggan, dengan produk dan kualitas yang utama terutama dalam pelayanan.</span></font></li><li><font color=\"#444444\" face=\"Open Sans, sans-serif\"><span style=\"font-size: 16px;\">Meningkat kan nilai yang tinggi, memberikan lingkungan kerja yang aman dan nyaman dan memberikan ke sempatan untuk berkembang bagi karyawan.</span></font></li><li><font color=\"#444444\" face=\"Open Sans, sans-serif\"><span style=\"font-size: 16px;\">Menjaga ke seimbangan lingkungan dengan memperhati kan dampak lingkungan dan sosial..<br></span></font></li></ol><p><br></p>', '1653838552.png', '1653842835.jpeg', 1, 'saepul anam', 'https://www.Rafiutama.com');
+INSERT INTO `set_profil` VALUES (1, 'Bengkellas Sinar Mulia', 'jl. Sarua Bulak Rt 02 / 03. Kel. Pondok Petir Kec. Bojongsari Depok', 'example data dclDNVKLNK;DVNSNDV;NDCNLAC jfbvjlbalfvlasbvlabdlv lskdfblkbdklcakdckl lbdjlbaljcblabclblbcklad adbjl dajbcjlabjlc dljclj dljdbcla lkjdbcllakc adlkcblckl lkadbckldkl dalbclb alkcblk sacljblca dljadbla dalbdcl adlabjl labdkjabjs jcbjlabclbackaklcklankclnkdsilahid labdlbaldblad abdasbdjbasd adasbdlabkds dljasdhaiodjld sldasoigciacbal dihdabcjac daanlknadk abljablsad aslbdabdlasbd adljasduabjds jabsdjbajd asjdjkabm sudgkj douagdskj sduasbdusadjkd', '1653904084.png', '1653904113.jpeg', 1, 'saepul anam', 'https://www.siteweb.com');
 
 -- ----------------------------
 -- Table structure for tender
@@ -245,7 +230,7 @@ CREATE TABLE `tender`  (
   `status` int(11) NULL DEFAULT NULL,
   `is_time` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`projek_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tender
@@ -267,7 +252,7 @@ CREATE TABLE `testimoni`  (
   `testi` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
   `confirm` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id_testi`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of testimoni
@@ -284,7 +269,7 @@ CREATE TABLE `tweb_kategori`  (
   `kategori_id` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`kategori_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tweb_kategori
@@ -303,7 +288,7 @@ CREATE TABLE `tweb_map`  (
   `codemap` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `routs` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tweb_map
@@ -323,7 +308,7 @@ CREATE TABLE `user`  (
   `is_active` int(11) NOT NULL,
   `date_created` date NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
@@ -343,14 +328,15 @@ CREATE TABLE `visitor`  (
   `online` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 688 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 689 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of visitor
 -- ----------------------------
 INSERT INTO `visitor` VALUES (685, '::1', 24, '2022-05-27', '1653690811', '2022-05-27 18:06:06');
 INSERT INTO `visitor` VALUES (686, '::1', 2, '2022-05-28', '1653718805', '2022-05-28 06:19:30');
-INSERT INTO `visitor` VALUES (687, '::1', 20, '2022-05-29', '1653846322', '2022-05-29 12:27:57');
+INSERT INTO `visitor` VALUES (687, '::1', 29, '2022-05-29', '1653855136', '2022-05-29 12:27:57');
+INSERT INTO `visitor` VALUES (688, '::1', 3, '2022-05-30', '1653904967', '2022-05-30 09:46:46');
 
 -- ----------------------------
 -- Table structure for whatsapptracking
@@ -363,7 +349,7 @@ CREATE TABLE `whatsapptracking`  (
   `time` datetime NOT NULL,
   `hits` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id_track`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of whatsapptracking
