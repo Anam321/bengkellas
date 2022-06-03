@@ -11,7 +11,7 @@
  Target Server Version : 50733
  File Encoding         : 65001
 
- Date: 30/05/2022 17:16:02
+ Date: 04/06/2022 01:05:42
 */
 
 SET NAMES utf8mb4;
@@ -138,7 +138,7 @@ CREATE TABLE `section_visit`  (
   `artikel_id` int(11) NOT NULL,
   `produk_id` int(11) NOT NULL,
   PRIMARY KEY (`id_secvist`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of section_visit
@@ -148,6 +148,7 @@ INSERT INTO `section_visit` VALUES (2, '::1', 60, '2022-05-27', '1653681100', '2
 INSERT INTO `section_visit` VALUES (3, '::1', 60, '2022-05-27', '1653681100', '2022-05-27 18:22:32', 0, 6);
 INSERT INTO `section_visit` VALUES (4, '::1', 51, '2022-05-27', '1653681100', '2022-05-27 18:28:24', 4, 0);
 INSERT INTO `section_visit` VALUES (5, '::1', 4, '2022-05-29', '1653845529', '2022-05-29 15:56:18', 0, 11);
+INSERT INTO `section_visit` VALUES (6, '::1', 2, '2022-06-02', '1654189722', '2022-06-02 17:08:26', 0, 18);
 
 -- ----------------------------
 -- Table structure for set_hero
@@ -188,7 +189,7 @@ CREATE TABLE `set_kontak`  (
 -- ----------------------------
 -- Records of set_kontak
 -- ----------------------------
-INSERT INTO `set_kontak` VALUES (1, '8212489', 'example@gmail.com', 'https://facebook.com/', 'intagram.com', '8212489', NULL);
+INSERT INTO `set_kontak` VALUES (1, '81213686670', 'example@gmail.com', 'https://facebook.com/', 'intagram.com', '81213686670', NULL);
 
 -- ----------------------------
 -- Table structure for set_profil
@@ -210,7 +211,7 @@ CREATE TABLE `set_profil`  (
 -- ----------------------------
 -- Records of set_profil
 -- ----------------------------
-INSERT INTO `set_profil` VALUES (1, 'Bengkellas Sinar Mulia', 'jl. Sarua Bulak Rt 02 / 03. Kel. Pondok Petir Kec. Bojongsari Depok', 'example data dclDNVKLNK;DVNSNDV;NDCNLAC jfbvjlbalfvlasbvlabdlv lskdfblkbdklcakdckl lbdjlbaljcblabclblbcklad adbjl dajbcjlabjlc dljclj dljdbcla lkjdbcllakc adlkcblckl lkadbckldkl dalbclb alkcblk sacljblca dljadbla dalbdcl adlabjl labdkjabjs jcbjlabclbackaklcklankclnkdsilahid labdlbaldblad abdasbdjbasd adasbdlabkds dljasdhaiodjld sldasoigciacbal dihdabcjac daanlknadk abljablsad aslbdabdlasbd adljasduabjds jabsdjbajd asjdjkabm sudgkj douagdskj sduasbdusadjkd', '1653904084.png', '1653904113.jpeg', 1, 'saepul anam', 'https://www.siteweb.com');
+INSERT INTO `set_profil` VALUES (1, 'Bengkellas Sinar Mulia', 'jl. Sarua Bulak Rt 04 / 03. Kel. Pondok Petir Kec. Bojongsari Depok', 'example data dclDNVKLNK;DVNSNDV;NDCNLAC jfbvjlbalfvlasbvlabdlv lskdfblkbdklcakdckl lbdjlbaljcblabclblbcklad adbjl dajbcjlabjlc dljclj dljdbcla lkjdbcllakc adlkcblckl lkadbckldkl dalbclb alkcblk sacljblca dljadbla dalbdcl adlabjl labdkjabjs jcbjlabclbackaklcklankclnkdsilahid labdlbaldblad abdasbdjbasd adasbdlabkds dljasdhaiodjld sldasoigciacbal dihdabcjac daanlknadk abljablsad aslbdabdlasbd adljasduabjds jabsdjbajd asjdjkabm sudgkj douagdskj sduasbdusadjkd', '1653904084.png', '1653904113.jpeg', 1, 'saepul anam', 'https://www.siteweb.com');
 
 -- ----------------------------
 -- Table structure for tender
@@ -328,7 +329,7 @@ CREATE TABLE `visitor`  (
   `online` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `time` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 689 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 691 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of visitor
@@ -337,6 +338,8 @@ INSERT INTO `visitor` VALUES (685, '::1', 24, '2022-05-27', '1653690811', '2022-
 INSERT INTO `visitor` VALUES (686, '::1', 2, '2022-05-28', '1653718805', '2022-05-28 06:19:30');
 INSERT INTO `visitor` VALUES (687, '::1', 29, '2022-05-29', '1653855136', '2022-05-29 12:27:57');
 INSERT INTO `visitor` VALUES (688, '::1', 3, '2022-05-30', '1653904967', '2022-05-30 09:46:46');
+INSERT INTO `visitor` VALUES (689, '::1', 1, '2022-05-31', '1653982070', '2022-05-31 07:27:50');
+INSERT INTO `visitor` VALUES (690, '::1', 5, '2022-06-02', '1654189752', '2022-06-02 10:28:18');
 
 -- ----------------------------
 -- Table structure for whatsapptracking
